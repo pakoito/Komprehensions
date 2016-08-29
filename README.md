@@ -4,17 +4,17 @@ RxComprehensions is a library to reduce boilerplate and simplify your call chain
 
 ## Rationale
 
-As your code starts getting more and more functional, you find that you want to chain multiple statements by means of `let`. This causes indentation levels to go quite high, and would often require that you split the code in several methods just to keep it readable.
+As your code starts getting more and more functional, you find that you want to chain multiple statements by helpers like `let`. This causes indentation levels to go quite high, and would often require that you split the code in several methods just to keep it readable.
 
 ```java
 fun calculateDoubles(calcParams: Params) =
     calcParams
             .let { params ->
-                params.first + param.second
+                defrombulate(params.first, param.second)
                         .let { result ->
-                            squareRoot(result)
-                                    .let { sqrt ->
-                                        storeResult(params.first, params.second, result)
+                            gaussianRoots(result)
+                                    .let { grtts ->
+                                        storeResult(params.first, params.second, result, grtts)
                                     }
                         }
             }
@@ -33,9 +33,9 @@ fun calculateDoubles(calcParams: Params) =
     // chained with let()
     doL(
         () -> params,
-        params -> params.first + param.second,
-        params, result -> squareRoot(result),
-        params, result, sqrt -> storeResult(params.first, params.second, result)
+        params -> defrombulate(params.first, param.second),
+        params, result -> gaussianRoots(result),
+        params, result, grtts -> storeResult(params.first, params.second, result, grtts)
     )
 ```
 
@@ -92,7 +92,7 @@ or to your `pom.xml`
 
 PRs and suggestions for new features welcome.
 
-If you have any core function that's chainable, please PR against the main module. If the function contains any 3rd party dependency, create a separate module instead and PR it.
+If you have any core function that is chainable, please PR against the main module. If the function is contained in any 3rd party dependency, create a separate module and PR it instead.
 
 For any error report please send an issue with a full stack trace and reproduction steps.
 
