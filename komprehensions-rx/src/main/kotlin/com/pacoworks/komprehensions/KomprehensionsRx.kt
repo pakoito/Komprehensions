@@ -802,3 +802,174 @@ fun <A, B, C, D, E, F, G, H, I, R> doSM(
                                         }
                             }
                 }
+
+/**
+ * Composes an [rx.Observable] from multiple [Transformer] chained by [Observable.compose].
+ *
+ * @return composed Observable
+ */
+fun <A, R> doCo(
+        zero: () -> Observable<A>,
+        one: Observable.Transformer<A, R>): Observable<R> =
+        zero()
+                .compose(one)
+
+/**
+ * Composes an [rx.Observable] from multiple [Transformer] chained by [Observable.compose].
+ *
+ * @return composed Observable
+ */
+fun <A, B, R> doCo(
+        zero: () -> Observable<A>,
+        one: Observable.Transformer<A, B>,
+        two: Observable.Transformer<B, R>): Observable<R> =
+        zero()
+                .compose(one)
+                .compose(two)
+
+/**
+ * Composes an [rx.Observable] from multiple [Transformer] chained by [Observable.compose].
+ *
+ * @return composed Observable
+ */
+fun <A, B, C, R> doCo(
+        zero: () -> Observable<A>,
+        one: Observable.Transformer<A, B>,
+        two: Observable.Transformer<B, C>,
+        three: Observable.Transformer<C, R>): Observable<R> =
+        zero()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+
+/**
+ * Composes an [rx.Observable] from multiple [Transformer] chained by [Observable.compose].
+ *
+ * @return composed Observable
+ */
+fun <A, B, C, D, R> doCo(
+        zero: () -> Observable<A>,
+        one: Observable.Transformer<A, B>,
+        two: Observable.Transformer<B, C>,
+        three: Observable.Transformer<C, D>,
+        four: Observable.Transformer<D, R>): Observable<R> =
+        zero()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+                .compose(four)
+
+/**
+ * Composes an [rx.Observable] from multiple [Transformer] chained by [Observable.compose].
+ *
+ * @return composed Observable
+ */
+fun <A, B, C, D, E, R> doCo(
+        zero: () -> Observable<A>,
+        one: Observable.Transformer<A, B>,
+        two: Observable.Transformer<B, C>,
+        three: Observable.Transformer<C, D>,
+        four: Observable.Transformer<D, E>,
+        five: Observable.Transformer<E, R>): Observable<R> =
+        zero()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+                .compose(four)
+                .compose(five)
+
+/**
+ * Composes an [rx.Observable] from multiple [Transformer] chained by [Observable.compose].
+ *
+ * @return composed Observable
+ */
+fun <A, B, C, D, E, F, R> doCo(
+        zero: () -> Observable<A>,
+        one: Observable.Transformer<A, B>,
+        two: Observable.Transformer<B, C>,
+        three: Observable.Transformer<C, D>,
+        four: Observable.Transformer<D, E>,
+        five: Observable.Transformer<E, F>,
+        six: Observable.Transformer<F, R>): Observable<R> =
+        zero()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+                .compose(four)
+                .compose(five)
+                .compose(six)
+
+/**
+ * Composes an [rx.Observable] from multiple [Transformer] chained by [Observable.compose].
+ *
+ * @return composed Observable
+ */
+fun <A, B, C, D, E, F, G, R> doCo(
+        zero: () -> Observable<A>,
+        one: Observable.Transformer<A, B>,
+        two: Observable.Transformer<B, C>,
+        three: Observable.Transformer<C, D>,
+        four: Observable.Transformer<D, E>,
+        five: Observable.Transformer<E, F>,
+        six: Observable.Transformer<F, G>,
+        seven: Observable.Transformer<G, R>): Observable<R> =
+        zero()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+                .compose(four)
+                .compose(five)
+                .compose(six)
+                .compose(seven)
+
+/**
+ * Composes an [rx.Observable] from multiple [Transformer] chained by [Observable.compose].
+ *
+ * @return composed Observable
+ */
+fun <A, B, C, D, E, F, G, H, R> doCo(
+        zero: () -> Observable<A>,
+        one: Observable.Transformer<A, B>,
+        two: Observable.Transformer<B, C>,
+        three: Observable.Transformer<C, D>,
+        four: Observable.Transformer<D, E>,
+        five: Observable.Transformer<E, F>,
+        six: Observable.Transformer<F, G>,
+        seven: Observable.Transformer<G, H>,
+        eight: Observable.Transformer<H, R>): Observable<R> =
+        zero()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+                .compose(four)
+                .compose(five)
+                .compose(six)
+                .compose(seven)
+                .compose(eight)
+
+/**
+ * Composes an [rx.Observable] from multiple [Transformer] chained by [Observable.compose].
+ *
+ * @return composed Observable
+ */
+fun <A, B, C, D, E, F, G, H, I, R> doCo(
+        zero: () -> Observable<A>,
+        one: Observable.Transformer<A, B>,
+        two: Observable.Transformer<B, C>,
+        three: Observable.Transformer<C, D>,
+        four: Observable.Transformer<D, E>,
+        five: Observable.Transformer<E, F>,
+        six: Observable.Transformer<F, G>,
+        seven: Observable.Transformer<G, H>,
+        eight: Observable.Transformer<H, I>,
+        nine: Observable.Transformer<I, R>): Observable<R> =
+        zero()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+                .compose(four)
+                .compose(five)
+                .compose(six)
+                .compose(seven)
+                .compose(eight)
+                .compose(nine)

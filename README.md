@@ -41,20 +41,52 @@ fun calculateDoubles(calcParams: Params) =
 
 ### Komprehensions-rx
 
-Komprehensions-rx is an extension module that allows chaining of [RxJava](https://github.com/ReactiveX/RxJava) `Observables` with operations `flatMap()`, `concatMap()`, and `switchMap()`. It contains functions `doFM()`, `doCM()`, and `doSM()`. Each takes from 2 to 9 `FuncN` each with an increasing number of parameters, and returns an `Observable` of the type of the return of the last function.
+Komprehensions-rx is an extension module that allows chaining of [RxJava](https://github.com/ReactiveX/RxJava) `Observables`.
+
+### Map comprehensions
+
+Komprehensions-rx contains static methods `doFM()` for `flatMap()`, `doCM()` for `concatMap()`, `doSM()` for `switchMap()`. Each takes from 1 to 9 `Function` each with an increasing number of parameters, and returns an `Observable` of the type of the return of the last function.
 
 ```java
 Observable<String> getUserFriends =
-    // chained with concatMap()
-    doCM(
+    // chained with flatMap()
+    RxComprehensions.doFM(
         () -> profileClicks(),
         position -> getUserFromProfile(position),
         position, user -> requestFriendListForUser(position, user.id),
         position, user, friends -> storeUserAndFriends(user, friends),
         position, user, friends, result -> toUserDisplayString(position, user, friends, result)
-    )
+    );
 ```
 
+### Compose comprehensions
+
+Komprehensions-rx contains static methods `doCo()` for `compose()`. Each takes from 1 to 9 `Transformer<T, U>` (RxJava 1.X) or `ObservableTransformer<T, U>` (RxJava 2.X), and returns an `Observable` of the type of the return of the last one.
+
+```java
+Observable<List<Siblings>> getRelatives =
+    // chained with compose()
+    RxComprehensions.doCo(
+        () -> requestRelative("12345"),
+        validate(),
+        assureThreads(Schedulers.io(), AndroidSchedulers.main()),
+        respectLifecycle(activity),
+        toUILayerModel(),
+        groupSiblings()
+    );
+
+Observable<RelativeDto> requestRelative(String id) { /* ... */ }
+
+ObservableTransformer<RelativeDto, RelativeDto> validate() { /* ... */ }
+
+ObservableTransformer<RelativeDto, RelativeDto> assureThreads(Scheduler in, Scheduler out) { /* ... */ }
+
+ObservableTransformer<RelativeDto, RelativeDto> respectLifecycle(Activity activity) { /* ... */ }
+
+ObservableTransformer<RelativeDto, Relative> toUILayerModel() { /* ... */ }
+
+ObservableTransformer<Relative, List<Siblings>> groupSiblings() { /* ... */ }
+```
 ##Distribution
 
 Add as a dependency to your `build.gradle`
@@ -67,7 +99,7 @@ repositories {
     
 dependencies {
     ...
-    compile 'com.github.pakoito:Komprehensions:1.0.0'
+    compile 'com.github.pakoito:Komprehensions:1.1.0'
     ...
 }
 ```
@@ -84,7 +116,7 @@ or to your `pom.xml`
 <dependency>
     <groupId>com.github.pakoito</groupId>
     <artifactId>Komprehensions</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 

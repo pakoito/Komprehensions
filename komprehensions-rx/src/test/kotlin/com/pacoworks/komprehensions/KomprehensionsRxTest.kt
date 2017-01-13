@@ -173,8 +173,54 @@ class KomprehensionsRxTest {
         observer.assertNoErrors()
         observer.assertValues(1, true, "result", "other", "other".length.toLong(), "other".length < 5, java.lang.Boolean.toString(false), false, Long::class.java)
     }
+
+    @Test
+    fun oneCo() {
+        Assert.assertEquals(doCo(zero(0), intIncrementToString()).toBlocking().first(), "1")
+    }
+
+    @Test
+    fun twoCo() {
+        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt()).toBlocking().first() as Long, 1)
+    }
+
+    @Test
+    fun threeCo() {
+        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first(), "2")
+    }
+
+    @Test
+    fun fourCo() {
+        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).toBlocking().first() as Long, 2)
+    }
+
+    @Test
+    fun fiveCo() {
+        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first(), "3")
+    }
+
+    @Test
+    fun sixCo() {
+        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).toBlocking().first() as Long, 3)
+    }
+
+    @Test
+    fun sevenCo() {
+        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first(), "4")
+    }
+
+    @Test
+    fun eightCo() {
+        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).toBlocking().first() as Long, 4)
+    }
+
+    @Test
+    fun nineCo() {
+        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first(), "5")
+    }
 }
 
+// region Helpers
 
 private fun zero(i: Int): () -> Observable<Int> = {
     Observable.just(i)
@@ -224,3 +270,11 @@ private fun nine(): (Int, Boolean, String, String, Long, Boolean, String, Boolea
     integer: Int, aBoolean: Boolean, s: String, s2: String, aLong: Long, aBoolean2: Boolean, s3: String, aBoolean3: Boolean, o: Any ->
     Observable.just(integer, aBoolean, s, s2, aLong, aBoolean2, s3, aBoolean3, o)
 }
+
+private fun intIncrementToString(): Observable.Transformer<Int, String> =
+        Observable.Transformer<Int, String> { integerObservable -> integerObservable.map { integer -> Integer.toString(integer + 1) } }
+
+private fun stringToInt(): Observable.Transformer<String, Int> =
+        Observable.Transformer<String, Int> { stringObservable -> stringObservable.map { s -> Integer.parseInt(s) } }
+
+// endregion
