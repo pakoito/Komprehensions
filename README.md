@@ -26,7 +26,7 @@ fun calculateDoubles(calcParams: Params) =
 
 ### Let
 
-Komprehensions contains functions `doL()` for `let()`. Each takes from 2 to 9 `FuncN` each with an increasing number of parameters, and returns an object of the type of the return of the last function.
+Komprehensions contains functions `doL()` for `let()`. Each takes from 2 to 9 function each with an increasing number of parameters, and returns an object of the type of the return of the last function.
 
 ```java
 fun calculateDoubles(calcParams: Params) =
@@ -39,13 +39,22 @@ fun calculateDoubles(calcParams: Params) =
     )
 ```
 
+### Chainable
+
+Komprehensions contains functions `doCh()` for interface `Chainable`. Each takes from 2 to 9 function each with an increasing number of parameters, and returns a Chainable.
+
+It's functionally similar to let but it's limited to types that are marked as Chainable. The recommended usage is to annotate sealed classes with it to indicate that they can be transformed between them.
+An example is available in [this link](https://gist.github.com/pakoito/8043a42c2381112753cfdaab128cdc49) with a longer description given by ["A Domain Driven approach to Kotlin's new types"](http://www.pacoworks.com/2016/10/03/new-talk-a-domain-driven-approach-to-kotlins-new-types-at-mobilization-2016/).
+
+A special thanks to @Takhion for simplifying my initial implementation.
+
 ### Komprehensions-rx
 
 Komprehensions-rx is an extension module that allows chaining of [RxJava](https://github.com/ReactiveX/RxJava) `Observables`.
 
 ### Map comprehensions
 
-Komprehensions-rx contains static methods `doFM()` for `flatMap()`, `doCM()` for `concatMap()`, `doSM()` for `switchMap()`. Each takes from 1 to 9 `Function` each with an increasing number of parameters, and returns an `Observable` of the type of the return of the last function.
+Komprehensions-rx contains static methods `doFM()` for `flatMap()`, `doCM()` for `concatMap()`, `doSM()` for `switchMap()`. Each takes from 1 to 9 function each with an increasing number of parameters, and returns an `Observable` of the type of the return of the last function.
 
 ```java
 Observable<String> getUserFriends =

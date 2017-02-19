@@ -278,3 +278,264 @@ fun <A, B, C, D, E, F, G, H, I, R> doL(
                                         }
                             }
                 }
+
+/**
+ * Composes an [rx.Observable] from multiple creation functions chained by andThen.
+ *
+ * @composed Observable
+ */
+fun <A: Chainable, R: Chainable> doCh(
+        zero: () -> A,
+        one: (A) -> R): R =
+        zero.invoke()
+                .andThen { a ->
+                    one.invoke(a)
+                }
+
+/**
+ * Composes an [rx.Observable] from multiple creation functions chained by andThen.
+ *
+ * @composed Observable
+ */
+fun <A: Chainable, B: Chainable, R: Chainable> doCh(
+        zero: () -> A,
+        one: (A) -> B,
+        two: (A, B) -> R): R =
+        zero.invoke()
+                .andThen { a ->
+                    one.invoke(a)
+                            .andThen { b ->
+                                two.invoke(a, b)
+                            }
+                }
+
+/**
+ * Composes an [rx.Observable] from multiple creation functions chained by andThen.
+ *
+ * @composed Observable
+ */
+fun <A: Chainable, B: Chainable, C: Chainable, R: Chainable> doCh(
+        zero: () -> A,
+        one: (A) -> B,
+        two: (A, B) -> C,
+        three: (A, B, C) -> R): R =
+        zero.invoke()
+                .andThen { a ->
+                    one.invoke(a)
+                            .andThen { b ->
+                                two.invoke(a, b)
+                                        .andThen { c ->
+                                            three.invoke(a, b, c)
+                                        }
+                            }
+                }
+
+/**
+ * Composes an [rx.Observable] from multiple creation functions chained by andThen.
+ *
+ * @composed Observable
+ */
+fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, R: Chainable> doCh(
+        zero: () -> A,
+        one: (A) -> B,
+        two: (A, B) -> C,
+        three: (A, B, C) -> D,
+        four: (A, B, C, D) -> R): R =
+        zero.invoke()
+                .andThen { a ->
+                    one.invoke(a)
+                            .andThen { b ->
+                                two.invoke(a, b)
+                                        .andThen { c ->
+                                            three.invoke(a, b, c)
+                                                    .andThen { d ->
+                                                        four.invoke(a, b, c, d)
+                                                    }
+                                        }
+                            }
+                }
+
+/**
+ * Composes an [rx.Observable] from multiple creation functions chained by andThen.
+ *
+ * @composed Observable
+ */
+fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, R: Chainable> doCh(
+        zero: () -> A,
+        one: (A) -> B,
+        two: (A, B) -> C,
+        three: (A, B, C) -> D,
+        four: (A, B, C, D) -> E,
+        five: (A, B, C, D, E) -> R): R =
+        zero.invoke()
+                .andThen { a ->
+                    one.invoke(a)
+                            .andThen { b ->
+                                two.invoke(a, b)
+                                        .andThen { c ->
+                                            three.invoke(a, b, c)
+                                                    .andThen { d ->
+                                                        four.invoke(a, b, c, d)
+                                                                .andThen { e ->
+                                                                    five.invoke(a, b, c, d, e)
+                                                                }
+                                                    }
+                                        }
+                            }
+                }
+
+/**
+ * Composes an [rx.Observable] from multiple creation functions chained by andThen.
+ *
+ * @composed Observable
+ */
+fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Chainable, R: Chainable> doCh(
+        zero: () -> A,
+        one: (A) -> B,
+        two: (A, B) -> C,
+        three: (A, B, C) -> D,
+        four: (A, B, C, D) -> E,
+        five: (A, B, C, D, E) -> F,
+        six: (A, B, C, D, E, F) -> R): R =
+        zero.invoke()
+                .andThen { a ->
+                    one.invoke(a)
+                            .andThen { b ->
+                                two.invoke(a, b)
+                                        .andThen { c ->
+                                            three.invoke(a, b, c)
+                                                    .andThen { d ->
+                                                        four.invoke(a, b, c, d)
+                                                                .andThen { e ->
+                                                                    five.invoke(a, b, c, d, e)
+                                                                            .andThen { f ->
+                                                                                six.invoke(a, b, c, d, e, f)
+                                                                            }
+                                                                }
+                                                    }
+                                        }
+                            }
+                }
+
+/**
+ * Composes an [rx.Observable] from multiple creation functions chained by andThen.
+ *
+ * @composed Observable
+ */
+fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Chainable, G: Chainable, R: Chainable> doCh(
+        zero: () -> A,
+        one: (A) -> B,
+        two: (A, B) -> C,
+        three: (A, B, C) -> D,
+        four: (A, B, C, D) -> E,
+        five: (A, B, C, D, E) -> F,
+        six: (A, B, C, D, E, F) -> G,
+        seven: (A, B, C, D, E, F, G) -> R): R =
+        zero.invoke()
+                .andThen { a ->
+                    one.invoke(a)
+                            .andThen { b ->
+                                two.invoke(a, b)
+                                        .andThen { c ->
+                                            three.invoke(a, b, c)
+                                                    .andThen { d ->
+                                                        four.invoke(a, b, c, d)
+                                                                .andThen { e ->
+                                                                    five.invoke(a, b, c, d, e)
+                                                                            .andThen { f ->
+                                                                                six.invoke(a, b, c, d, e, f)
+                                                                                        .andThen { g ->
+                                                                                            seven.invoke(a, b, c, d, e, f, g)
+                                                                                        }
+                                                                            }
+                                                                }
+                                                    }
+                                        }
+                            }
+                }
+
+/**
+ * Composes an [rx.Observable] from multiple creation functions chained by andThen.
+ *
+ * @composed Observable
+ */
+fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Chainable, G: Chainable, H: Chainable, R: Chainable> doCh(
+        zero: () -> A,
+        one: (A) -> B,
+        two: (A, B) -> C,
+        three: (A, B, C) -> D,
+        four: (A, B, C, D) -> E,
+        five: (A, B, C, D, E) -> F,
+        six: (A, B, C, D, E, F) -> G,
+        seven: (A, B, C, D, E, F, G) -> H,
+        eight: (A, B, C, D, E, F, G, H) -> R): R =
+        zero.invoke()
+                .andThen { a ->
+                    one.invoke(a)
+                            .andThen { b ->
+                                two.invoke(a, b)
+                                        .andThen { c ->
+                                            three.invoke(a, b, c)
+                                                    .andThen { d ->
+                                                        four.invoke(a, b, c, d)
+                                                                .andThen { e ->
+                                                                    five.invoke(a, b, c, d, e)
+                                                                            .andThen { f ->
+                                                                                six.invoke(a, b, c, d, e, f)
+                                                                                        .andThen { g ->
+                                                                                            seven.invoke(a, b, c, d, e, f, g)
+                                                                                                    .andThen { h ->
+                                                                                                        eight.invoke(a, b, c, d, e, f, g, h)
+                                                                                                    }
+                                                                                        }
+                                                                            }
+                                                                }
+                                                    }
+                                        }
+                            }
+                }
+
+/**
+ * Composes an [rx.Observable] from multiple creation functions chained by andThen.
+ *
+ * @composed Observable
+ */
+fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Chainable, G: Chainable, H: Chainable, I: Chainable, R: Chainable> doCh(
+        zero: () -> A,
+        one: (A) -> B,
+        two: (A, B) -> C,
+        three: (A, B, C) -> D,
+        four: (A, B, C, D) -> E,
+        five: (A, B, C, D, E) -> F,
+        six: (A, B, C, D, E, F) -> G,
+        seven: (A, B, C, D, E, F, G) -> H,
+        eight: (A, B, C, D, E, F, G, H) -> I,
+        nine: (A, B, C, D, E, F, G, H, I) -> R): R =
+        zero.invoke()
+                .andThen { a ->
+                    one.invoke(a)
+                            .andThen { b ->
+                                two.invoke(a, b)
+                                        .andThen { c ->
+                                            three.invoke(a, b, c)
+                                                    .andThen { d ->
+                                                        four.invoke(a, b, c, d)
+                                                                .andThen { e ->
+                                                                    five.invoke(a, b, c, d, e)
+                                                                            .andThen { f ->
+                                                                                six.invoke(a, b, c, d, e, f)
+                                                                                        .andThen { g ->
+                                                                                            seven.invoke(a, b, c, d, e, f, g)
+                                                                                                    .andThen { h ->
+                                                                                                        eight.invoke(a, b, c, d, e, f, g, h)
+                                                                                                                .andThen { i ->
+                                                                                                                    nine.invoke(a, b, c, d, e, f, g, h, i)
+                                                                                                                }
+                                                                                                    }
+                                                                                        }
+                                                                            }
+                                                                }
+                                                    }
+                                        }
+                            }
+                }

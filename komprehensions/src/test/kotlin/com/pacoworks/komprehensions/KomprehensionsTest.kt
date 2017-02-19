@@ -17,6 +17,7 @@
 
 package com.pacoworks.komprehensions
 
+import com.pacoworks.komprehensions.Chain.*
 import org.junit.Assert
 import org.junit.Test
 
@@ -67,6 +68,54 @@ class KomprehensionsTest {
         val value = doL(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true"), eight(Long::class.java), nine())
         Assert.assertEquals(value, listOf(1, true, "result", "other", "other".length.toLong(), "other".length < 5, java.lang.Boolean.toString(false), false, Long::class.java))
     }
+
+    @Test
+    fun twoCh() {
+        val value = doCh({ One }, { Two })
+        Assert.assertEquals(Two, value)
+    }
+
+    @Test
+    fun threeCh() {
+        val value = doCh({ One }, { Two }, { one, two -> Three })
+        Assert.assertEquals(Three, value)
+    }
+
+    @Test
+    fun fourCh() {
+        val value = doCh({ One }, { Two }, { one, two -> Three }, { one, two, three -> Four })
+        Assert.assertEquals(Four, value)
+    }
+
+    @Test
+    fun fiveCh() {
+        val value = doCh({ One }, { Two }, { one, two -> Three }, { one, two, three -> Four }, { one, two, three, four -> Five })
+        Assert.assertEquals(Five, value)
+    }
+
+    @Test
+    fun sixCh() {
+        val value = doCh({ One }, { Two }, { one, two -> Three }, { one, two, three -> Four }, { one, two, three, four -> Five }, { one, two, three, four, five -> Six })
+        Assert.assertEquals(Six, value)
+    }
+
+    @Test
+    fun sevenCh() {
+        val value = doCh({ One }, { Two }, { one, two -> Three }, { one, two, three -> Four }, { one, two, three, four -> Five }, { one, two, three, four, five -> Six }, { one, two, three, four, five, six -> Seven })
+        Assert.assertEquals(Seven, value)
+    }
+
+    @Test
+    fun eightCh() {
+        val value = doCh({ One }, { Two }, { one, two -> Three }, { one, two, three -> Four }, { one, two, three, four -> Five }, { one, two, three, four, five -> Six }, { one, two, three, four, five, six -> Seven }, { one, two, three, four, five, six, seven -> Eight })
+        Assert.assertEquals(Eight, value)
+    }
+
+    @Test
+    fun nineCh() {
+        val value = doCh({ One }, { Two }, { one, two -> Three }, { one, two, three -> Four }, { one, two, three, four -> Five }, { one, two, three, four, five -> Six }, { one, two, three, four, five, six -> Seven }, { one, two, three, four, five, six, seven -> Eight }, { one, two, three, four, five, six, seven, eight -> Nine })
+        Assert.assertEquals(Nine, value)
+    }
 }
 
 private fun zero(i: Int): () -> Int = { i }
@@ -111,4 +160,16 @@ private fun <T> eight(item: Class<T>): (Int, Boolean, String, String, Long, Bool
 private fun nine(): (Int, Boolean, String, String, Long, Boolean, String, Boolean, Any) -> Any = {
     integer: Int, aBoolean: Boolean, s: String, s2: String, aLong: Long, aBoolean2: Boolean, s3: String, aBoolean3: Boolean, o: Any ->
     listOf(integer, aBoolean, s, s2, aLong, aBoolean2, s3, aBoolean3, o)
+}
+
+sealed class Chain: Chainable {
+    object One : Chain()
+    object Two : Chain()
+    object Three : Chain()
+    object Four : Chain()
+    object Five : Chain()
+    object Six : Chain()
+    object Seven : Chain()
+    object Eight : Chain()
+    object Nine : Chain()
 }
