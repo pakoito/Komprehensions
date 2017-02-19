@@ -14,4 +14,4 @@
  * limitations under the License.
  */
 
-include ':komprehensions', ':komprehensions-rx'
+include ':komprehensions', ':komprehensions-rx', ':komprehensions-rx2'
