@@ -116,13 +116,13 @@ repositories {
     
 dependencies {
     ...
-    compile 'com.github.pakoito.Komprehensions:komprehensions:1.2.0'
+    compile 'com.github.pakoito.Komprehensions:komprehensions:1.2.1'
 
     // Extensions for RxJava 1.X
-    compile 'com.github.pakoito.Komprehensions:komprehensions-rx:1.2.0'
+    compile 'com.github.pakoito.Komprehensions:komprehensions-rx:1.2.1'
 
     // Extensions for RxJava 2.X
-    compile 'com.github.pakoito.Komprehensions:komprehensions-rx2:1.2.0'
+    compile 'com.github.pakoito.Komprehensions:komprehensions-rx2:1.2.1'
     ...
 }
 ```
@@ -139,19 +139,19 @@ or to your `pom.xml`
 <dependency>
     <groupId>com.github.pakoito.Komprehensions</groupId>
     <artifactId>komprehensions</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
 </dependency>
 
 <dependency>
     <groupId>com.github.pakoito.Komprehensions</groupId>
     <artifactId>komprehensions-rx</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
 </dependency>
 
 <dependency>
     <groupId>com.github.pakoito.Komprehensions</groupId>
     <artifactId>komprehensions-rx2</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
 </dependency>
 ```
 
