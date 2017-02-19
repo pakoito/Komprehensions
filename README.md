@@ -48,13 +48,21 @@ An example is available in [this link](https://gist.github.com/pakoito/8043a42c2
 
 A special thanks to [@Takhion](https://github.com/Takhion) for simplifying my initial implementation.
 
+### map
+
+Komprehensions contains functions `doMI()` for `flatMap()` chaining of `Iterable`. Each takes from 1 to 9 function each with an increasing number of parameters, and returns an `Iterable` of the type of the return of the last function.
+
+### flatMap
+
+Komprehensions contains functions `doFMI()` for `flatMap()` chaining of `Iterable`. Each takes from 1 to 9 function each with an increasing number of parameters and returns an `Iterable`, then flattens the return into an `Iterable` of the type of the return of the last function.
+
 ### Komprehensions-rx
 
-Komprehensions-rx is an extension module that allows chaining of [RxJava](https://github.com/ReactiveX/RxJava) `Observables`.
+Komprehensions-rx is an extension module that allows chaining of [RxJava](https://github.com/ReactiveX/RxJava) `Observables`. It is available for both RxJava 1 and 2
 
 ### Map comprehensions
 
-Komprehensions-rx contains static methods `doFM()` for `flatMap()`, `doCM()` for `concatMap()`, `doSM()` for `switchMap()`. Each takes from 1 to 9 function each with an increasing number of parameters, and returns an `Observable` of the type of the return of the last function.
+Komprehensions-rx contains functions `doFM()` for `flatMap()`, `doCM()` for `concatMap()`, `doSM()` for `switchMap()`. Each takes from 1 to 9 function each with an increasing number of parameters, and returns an `Observable` of the type of the return of the last function.
 
 ```java
 Observable<String> getUserFriends =
@@ -70,7 +78,7 @@ Observable<String> getUserFriends =
 
 ### Compose comprehensions
 
-Komprehensions-rx contains static methods `doCo()` for `compose()`. Each takes from 1 to 9 `Transformer<T, U>` (RxJava 1.X) or `ObservableTransformer<T, U>` (RxJava 2.X), and returns an `Observable` of the type of the return of the last one.
+Komprehensions-rx contains functions `doCo()` for `compose()`. Each takes from 1 to 9 `Transformer<T, U>` (RxJava 1.X) or `ObservableTransformer<T, U>` (RxJava 2.X), and returns an `Observable` of the type of the return of the last one.
 
 ```java
 Observable<List<Siblings>> getRelatives =
@@ -109,7 +117,11 @@ repositories {
 dependencies {
     ...
     compile 'com.github.pakoito.Komprehensions:komprehensions:1.2.0'
+
+    // Extensions for RxJava 1.X
     compile 'com.github.pakoito.Komprehensions:komprehensions-rx:1.2.0'
+
+    // Extensions for RxJava 2.X
     compile 'com.github.pakoito.Komprehensions:komprehensions-rx2:1.2.0'
     ...
 }
