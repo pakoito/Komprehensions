@@ -541,27 +541,27 @@ fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Ch
                 }
 
 /**
- * Composes an [List] from multiple creation functions chained by flatMap.
+ * Composes an [Iterable] from multiple creation functions chained by flatMap.
  *
- * @return list
+ * @return iterable
  */
-fun <A, R> doM(
+fun <A, R> doFMI(
         zero: () -> Iterable<A>,
-        one: (A) -> List<R>): List<R> =
+        one: (A) -> Iterable<R>): Iterable<R> =
         zero.invoke()
                 .flatMap { a ->
                     one.invoke(a)
                 }
 
 /**
- * Composes an [List] from multiple creation functions chained by flatMap.
+ * Composes an [Iterable] from multiple creation functions chained by flatMap.
  *
- * @return list
+ * @return iterable
  */
-fun <A, B, R> doM(
+fun <A, B, R> doFMI(
         zero: () -> Iterable<A>,
-        one: (A) -> List<B>,
-        two: (A, B) -> List<R>): List<R> =
+        one: (A) -> Iterable<B>,
+        two: (A, B) -> Iterable<R>): Iterable<R> =
         zero.invoke()
                 .flatMap { a ->
                     one.invoke(a)
@@ -571,15 +571,15 @@ fun <A, B, R> doM(
                 }
 
 /**
- * Composes an [List] from multiple creation functions chained by flatMap.
+ * Composes an [Iterable] from multiple creation functions chained by flatMap.
  *
- * @return list
+ * @return iterable
  */
-fun <A, B, C, R> doM(
+fun <A, B, C, R> doFMI(
         zero: () -> Iterable<A>,
-        one: (A) -> List<B>,
-        two: (A, B) -> List<C>,
-        three: (A, B, C) -> List<R>): List<R> =
+        one: (A) -> Iterable<B>,
+        two: (A, B) -> Iterable<C>,
+        three: (A, B, C) -> Iterable<R>): Iterable<R> =
         zero.invoke()
                 .flatMap { a ->
                     one.invoke(a)
@@ -592,16 +592,16 @@ fun <A, B, C, R> doM(
                 }
 
 /**
- * Composes an [List] from multiple creation functions chained by flatMap.
+ * Composes an [Iterable] from multiple creation functions chained by flatMap.
  *
- * @return list
+ * @return iterable
  */
-fun <A, B, C, D, R> doM(
+fun <A, B, C, D, R> doFMI(
         zero: () -> Iterable<A>,
-        one: (A) -> List<B>,
-        two: (A, B) -> List<C>,
-        three: (A, B, C) -> List<D>,
-        four: (A, B, C, D) -> List<R>): List<R> =
+        one: (A) -> Iterable<B>,
+        two: (A, B) -> Iterable<C>,
+        three: (A, B, C) -> Iterable<D>,
+        four: (A, B, C, D) -> Iterable<R>): Iterable<R> =
         zero.invoke()
                 .flatMap { a ->
                     one.invoke(a)
@@ -617,17 +617,17 @@ fun <A, B, C, D, R> doM(
                 }
 
 /**
- * Composes an [List] from multiple creation functions chained by flatMap.
+ * Composes an [Iterable] from multiple creation functions chained by flatMap.
  *
- * @return list
+ * @return iterable
  */
-fun <A, B, C, D, E, R> doM(
+fun <A, B, C, D, E, R> doFMI(
         zero: () -> Iterable<A>,
-        one: (A) -> List<B>,
-        two: (A, B) -> List<C>,
-        three: (A, B, C) -> List<D>,
-        four: (A, B, C, D) -> List<E>,
-        five: (A, B, C, D, E) -> List<R>): List<R> =
+        one: (A) -> Iterable<B>,
+        two: (A, B) -> Iterable<C>,
+        three: (A, B, C) -> Iterable<D>,
+        four: (A, B, C, D) -> Iterable<E>,
+        five: (A, B, C, D, E) -> Iterable<R>): Iterable<R> =
         zero.invoke()
                 .flatMap { a ->
                     one.invoke(a)
@@ -646,18 +646,18 @@ fun <A, B, C, D, E, R> doM(
                 }
 
 /**
- * Composes an [List] from multiple creation functions chained by flatMap.
+ * Composes an [Iterable] from multiple creation functions chained by flatMap.
  *
- * @return list
+ * @return iterable
  */
-fun <A, B, C, D, E, F, R> doM(
+fun <A, B, C, D, E, F, R> doFMI(
         zero: () -> Iterable<A>,
-        one: (A) -> List<B>,
-        two: (A, B) -> List<C>,
-        three: (A, B, C) -> List<D>,
-        four: (A, B, C, D) -> List<E>,
-        five: (A, B, C, D, E) -> List<F>,
-        six: (A, B, C, D, E, F) -> List<R>): List<R> =
+        one: (A) -> Iterable<B>,
+        two: (A, B) -> Iterable<C>,
+        three: (A, B, C) -> Iterable<D>,
+        four: (A, B, C, D) -> Iterable<E>,
+        five: (A, B, C, D, E) -> Iterable<F>,
+        six: (A, B, C, D, E, F) -> Iterable<R>): Iterable<R> =
         zero.invoke()
                 .flatMap { a ->
                     one.invoke(a)
@@ -679,19 +679,19 @@ fun <A, B, C, D, E, F, R> doM(
                 }
 
 /**
- * Composes an [List] from multiple creation functions chained by flatMap.
+ * Composes an [Iterable] from multiple creation functions chained by flatMap.
  *
- * @return list
+ * @return iterable
  */
-fun <A, B, C, D, E, F, G, R> doM(
+fun <A, B, C, D, E, F, G, R> doFMI(
         zero: () -> Iterable<A>,
-        one: (A) -> List<B>,
-        two: (A, B) -> List<C>,
-        three: (A, B, C) -> List<D>,
-        four: (A, B, C, D) -> List<E>,
-        five: (A, B, C, D, E) -> List<F>,
-        six: (A, B, C, D, E, F) -> List<G>,
-        seven: (A, B, C, D, E, F, G) -> List<R>): List<R> =
+        one: (A) -> Iterable<B>,
+        two: (A, B) -> Iterable<C>,
+        three: (A, B, C) -> Iterable<D>,
+        four: (A, B, C, D) -> Iterable<E>,
+        five: (A, B, C, D, E) -> Iterable<F>,
+        six: (A, B, C, D, E, F) -> Iterable<G>,
+        seven: (A, B, C, D, E, F, G) -> Iterable<R>): Iterable<R> =
         zero.invoke()
                 .flatMap { a ->
                     one.invoke(a)
@@ -716,20 +716,20 @@ fun <A, B, C, D, E, F, G, R> doM(
                 }
 
 /**
- * Composes an [List] from multiple creation functions chained by flatMap.
+ * Composes an [Iterable] from multiple creation functions chained by flatMap.
  *
- * @return list
+ * @return iterable
  */
-fun <A, B, C, D, E, F, G, H, R> doM(
+fun <A, B, C, D, E, F, G, H, R> doFMI(
         zero: () -> Iterable<A>,
-        one: (A) -> List<B>,
-        two: (A, B) -> List<C>,
-        three: (A, B, C) -> List<D>,
-        four: (A, B, C, D) -> List<E>,
-        five: (A, B, C, D, E) -> List<F>,
-        six: (A, B, C, D, E, F) -> List<G>,
-        seven: (A, B, C, D, E, F, G) -> List<H>,
-        eight: (A, B, C, D, E, F, G, H) -> List<R>): List<R> =
+        one: (A) -> Iterable<B>,
+        two: (A, B) -> Iterable<C>,
+        three: (A, B, C) -> Iterable<D>,
+        four: (A, B, C, D) -> Iterable<E>,
+        five: (A, B, C, D, E) -> Iterable<F>,
+        six: (A, B, C, D, E, F) -> Iterable<G>,
+        seven: (A, B, C, D, E, F, G) -> Iterable<H>,
+        eight: (A, B, C, D, E, F, G, H) -> Iterable<R>): Iterable<R> =
         zero.invoke()
                 .flatMap { a ->
                     one.invoke(a)
@@ -757,21 +757,21 @@ fun <A, B, C, D, E, F, G, H, R> doM(
                 }
 
 /**
- * Composes an [List] from multiple creation functions chained by flatMap.
+ * Composes an [Iterable] from multiple creation functions chained by flatMap.
  *
- * @return list
+ * @return iterable
  */
-fun <A, B, C, D, E, F, G, H, I, R> doM(
+fun <A, B, C, D, E, F, G, H, I, R> doFMI(
         zero: () -> Iterable<A>,
-        one: (A) -> List<B>,
-        two: (A, B) -> List<C>,
-        three: (A, B, C) -> List<D>,
-        four: (A, B, C, D) -> List<E>,
-        five: (A, B, C, D, E) -> List<F>,
-        six: (A, B, C, D, E, F) -> List<G>,
-        seven: (A, B, C, D, E, F, G) -> List<H>,
-        eight: (A, B, C, D, E, F, G, H) -> List<I>,
-        nine: (A, B, C, D, E, F, G, H, I) -> List<R>): List<R> =
+        one: (A) -> Iterable<B>,
+        two: (A, B) -> Iterable<C>,
+        three: (A, B, C) -> Iterable<D>,
+        four: (A, B, C, D) -> Iterable<E>,
+        five: (A, B, C, D, E) -> Iterable<F>,
+        six: (A, B, C, D, E, F) -> Iterable<G>,
+        seven: (A, B, C, D, E, F, G) -> Iterable<H>,
+        eight: (A, B, C, D, E, F, G, H) -> Iterable<I>,
+        nine: (A, B, C, D, E, F, G, H, I) -> Iterable<R>): Iterable<R> =
         zero.invoke()
                 .flatMap { a ->
                     one.invoke(a)
