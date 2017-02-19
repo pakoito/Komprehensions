@@ -15,7 +15,7 @@
  */
 
 
-package com.pacoworks.komprehensions
+package com.pacoworks.komprehensions.rx
 
 import org.junit.Assert
 import org.junit.Test

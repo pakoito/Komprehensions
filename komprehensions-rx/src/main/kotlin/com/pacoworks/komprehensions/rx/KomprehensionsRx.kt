@@ -16,10 +16,9 @@
 
 @file:JvmName("KomprehensionsRx")
 
-package com.pacoworks.komprehensions
+package com.pacoworks.komprehensions.rx
 
-import io.reactivex.Observable
-import io.reactivex.ObservableTransformer
+import rx.Observable
 
 /**
  * Composes an [rx.Observable] from multiple creation functions chained by [rx.Observable.flatMap].
@@ -811,7 +810,7 @@ fun <A, B, C, D, E, F, G, H, I, R> doSM(
  */
 fun <A, R> doCo(
         zero: () -> Observable<A>,
-        one: ObservableTransformer<A, R>): Observable<R> =
+        one: Observable.Transformer<A, R>): Observable<R> =
         zero()
                 .compose(one)
 
@@ -822,8 +821,8 @@ fun <A, R> doCo(
  */
 fun <A, B, R> doCo(
         zero: () -> Observable<A>,
-        one: ObservableTransformer<A, B>,
-        two: ObservableTransformer<B, R>): Observable<R> =
+        one: Observable.Transformer<A, B>,
+        two: Observable.Transformer<B, R>): Observable<R> =
         zero()
                 .compose(one)
                 .compose(two)
@@ -835,9 +834,9 @@ fun <A, B, R> doCo(
  */
 fun <A, B, C, R> doCo(
         zero: () -> Observable<A>,
-        one: ObservableTransformer<A, B>,
-        two: ObservableTransformer<B, C>,
-        three: ObservableTransformer<C, R>): Observable<R> =
+        one: Observable.Transformer<A, B>,
+        two: Observable.Transformer<B, C>,
+        three: Observable.Transformer<C, R>): Observable<R> =
         zero()
                 .compose(one)
                 .compose(two)
@@ -850,10 +849,10 @@ fun <A, B, C, R> doCo(
  */
 fun <A, B, C, D, R> doCo(
         zero: () -> Observable<A>,
-        one: ObservableTransformer<A, B>,
-        two: ObservableTransformer<B, C>,
-        three: ObservableTransformer<C, D>,
-        four: ObservableTransformer<D, R>): Observable<R> =
+        one: Observable.Transformer<A, B>,
+        two: Observable.Transformer<B, C>,
+        three: Observable.Transformer<C, D>,
+        four: Observable.Transformer<D, R>): Observable<R> =
         zero()
                 .compose(one)
                 .compose(two)
@@ -867,11 +866,11 @@ fun <A, B, C, D, R> doCo(
  */
 fun <A, B, C, D, E, R> doCo(
         zero: () -> Observable<A>,
-        one: ObservableTransformer<A, B>,
-        two: ObservableTransformer<B, C>,
-        three: ObservableTransformer<C, D>,
-        four: ObservableTransformer<D, E>,
-        five: ObservableTransformer<E, R>): Observable<R> =
+        one: Observable.Transformer<A, B>,
+        two: Observable.Transformer<B, C>,
+        three: Observable.Transformer<C, D>,
+        four: Observable.Transformer<D, E>,
+        five: Observable.Transformer<E, R>): Observable<R> =
         zero()
                 .compose(one)
                 .compose(two)
@@ -886,12 +885,12 @@ fun <A, B, C, D, E, R> doCo(
  */
 fun <A, B, C, D, E, F, R> doCo(
         zero: () -> Observable<A>,
-        one: ObservableTransformer<A, B>,
-        two: ObservableTransformer<B, C>,
-        three: ObservableTransformer<C, D>,
-        four: ObservableTransformer<D, E>,
-        five: ObservableTransformer<E, F>,
-        six: ObservableTransformer<F, R>): Observable<R> =
+        one: Observable.Transformer<A, B>,
+        two: Observable.Transformer<B, C>,
+        three: Observable.Transformer<C, D>,
+        four: Observable.Transformer<D, E>,
+        five: Observable.Transformer<E, F>,
+        six: Observable.Transformer<F, R>): Observable<R> =
         zero()
                 .compose(one)
                 .compose(two)
@@ -907,13 +906,13 @@ fun <A, B, C, D, E, F, R> doCo(
  */
 fun <A, B, C, D, E, F, G, R> doCo(
         zero: () -> Observable<A>,
-        one: ObservableTransformer<A, B>,
-        two: ObservableTransformer<B, C>,
-        three: ObservableTransformer<C, D>,
-        four: ObservableTransformer<D, E>,
-        five: ObservableTransformer<E, F>,
-        six: ObservableTransformer<F, G>,
-        seven: ObservableTransformer<G, R>): Observable<R> =
+        one: Observable.Transformer<A, B>,
+        two: Observable.Transformer<B, C>,
+        three: Observable.Transformer<C, D>,
+        four: Observable.Transformer<D, E>,
+        five: Observable.Transformer<E, F>,
+        six: Observable.Transformer<F, G>,
+        seven: Observable.Transformer<G, R>): Observable<R> =
         zero()
                 .compose(one)
                 .compose(two)
@@ -930,14 +929,14 @@ fun <A, B, C, D, E, F, G, R> doCo(
  */
 fun <A, B, C, D, E, F, G, H, R> doCo(
         zero: () -> Observable<A>,
-        one: ObservableTransformer<A, B>,
-        two: ObservableTransformer<B, C>,
-        three: ObservableTransformer<C, D>,
-        four: ObservableTransformer<D, E>,
-        five: ObservableTransformer<E, F>,
-        six: ObservableTransformer<F, G>,
-        seven: ObservableTransformer<G, H>,
-        eight: ObservableTransformer<H, R>): Observable<R> =
+        one: Observable.Transformer<A, B>,
+        two: Observable.Transformer<B, C>,
+        three: Observable.Transformer<C, D>,
+        four: Observable.Transformer<D, E>,
+        five: Observable.Transformer<E, F>,
+        six: Observable.Transformer<F, G>,
+        seven: Observable.Transformer<G, H>,
+        eight: Observable.Transformer<H, R>): Observable<R> =
         zero()
                 .compose(one)
                 .compose(two)
@@ -955,15 +954,15 @@ fun <A, B, C, D, E, F, G, H, R> doCo(
  */
 fun <A, B, C, D, E, F, G, H, I, R> doCo(
         zero: () -> Observable<A>,
-        one: ObservableTransformer<A, B>,
-        two: ObservableTransformer<B, C>,
-        three: ObservableTransformer<C, D>,
-        four: ObservableTransformer<D, E>,
-        five: ObservableTransformer<E, F>,
-        six: ObservableTransformer<F, G>,
-        seven: ObservableTransformer<G, H>,
-        eight: ObservableTransformer<H, I>,
-        nine: ObservableTransformer<I, R>): Observable<R> =
+        one: Observable.Transformer<A, B>,
+        two: Observable.Transformer<B, C>,
+        three: Observable.Transformer<C, D>,
+        four: Observable.Transformer<D, E>,
+        five: Observable.Transformer<E, F>,
+        six: Observable.Transformer<F, G>,
+        seven: Observable.Transformer<G, H>,
+        eight: Observable.Transformer<H, I>,
+        nine: Observable.Transformer<I, R>): Observable<R> =
         zero()
                 .compose(one)
                 .compose(two)

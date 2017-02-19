@@ -1,5 +1,5 @@
 /*
- * Copyright (c) pakoito 2016
+ * Copyright (c) pakoito 2017
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-
-package com.pacoworks.komprehensions
+package com.pacoworks.komprehensions.rx2
 
 import io.reactivex.Observable
 import io.reactivex.ObservableTransformer
