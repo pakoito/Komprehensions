@@ -800,3 +800,174 @@ fun <A, B, C, D, E, F, G, H, I, R> doFMI(
                                         }
                             }
                 }
+
+/**
+ * Composes an [Iterable] from multiple functions chained by [Iterable.map]
+ *
+ * @return composed Observable
+ */
+fun <A, R> doMI(
+        zero: () -> Iterable<A>,
+        one: (A) -> R): Iterable<R> =
+        zero()
+                .map(one)
+
+/**
+ * Composes an [Iterable] from multiple functions chained by [Iterable.map]
+ *
+ * @return composed Observable
+ */
+fun <A, B, R> doMI(
+        zero: () -> Iterable<A>,
+        one: (A) -> B,
+        two: (B) -> R): Iterable<R> =
+        zero()
+                .map(one)
+                .map(two)
+
+/**
+ * Composes an [Iterable] from multiple functions chained by [Iterable.map]
+ *
+ * @return composed Observable
+ */
+fun <A, B, C, R> doMI(
+        zero: () -> Iterable<A>,
+        one: (A) -> B,
+        two: (B) -> C,
+        three: (C) -> R): Iterable<R> =
+        zero()
+                .map(one)
+                .map(two)
+                .map(three)
+
+/**
+ * Composes an [Iterable] from multiple functions chained by [Iterable.map]
+ *
+ * @return composed Observable
+ */
+fun <A, B, C, D, R> doMI(
+        zero: () -> Iterable<A>,
+        one: (A) -> B,
+        two: (B) -> C,
+        three: (C) -> D,
+        four: (D) -> R): Iterable<R> =
+        zero()
+                .map(one)
+                .map(two)
+                .map(three)
+                .map(four)
+
+/**
+ * Composes an [Iterable] from multiple functions chained by [Iterable.map]
+ *
+ * @return composed Observable
+ */
+fun <A, B, C, D, E, R> doMI(
+        zero: () -> Iterable<A>,
+        one: (A) -> B,
+        two: (B) -> C,
+        three: (C) -> D,
+        four: (D) -> E,
+        five: (E) -> R): Iterable<R> =
+        zero()
+                .map(one)
+                .map(two)
+                .map(three)
+                .map(four)
+                .map(five)
+
+/**
+ * Composes an [Iterable] from multiple functions chained by [Iterable.map]
+ *
+ * @return composed Observable
+ */
+fun <A, B, C, D, E, F, R> doMI(
+        zero: () -> Iterable<A>,
+        one: (A) -> B,
+        two: (B) -> C,
+        three: (C) -> D,
+        four: (D) -> E,
+        five: (E) -> F,
+        six: (F) -> R): Iterable<R> =
+        zero()
+                .map(one)
+                .map(two)
+                .map(three)
+                .map(four)
+                .map(five)
+                .map(six)
+
+/**
+ * Composes an [Iterable] from multiple functions chained by [Iterable.map]
+ *
+ * @return composed Observable
+ */
+fun <A, B, C, D, E, F, G, R> doMI(
+        zero: () -> Iterable<A>,
+        one: (A) -> B,
+        two: (B) -> C,
+        three: (C) -> D,
+        four: (D) -> E,
+        five: (E) -> F,
+        six: (F) -> G,
+        seven: (G) -> R): Iterable<R> =
+        zero()
+                .map(one)
+                .map(two)
+                .map(three)
+                .map(four)
+                .map(five)
+                .map(six)
+                .map(seven)
+
+/**
+ * Composes an [Iterable] from multiple functions chained by [Iterable.map]
+ *
+ * @return composed Observable
+ */
+fun <A, B, C, D, E, F, G, H, R> doMI(
+        zero: () -> Iterable<A>,
+        one: (A) -> B,
+        two: (B) -> C,
+        three: (C) -> D,
+        four: (D) -> E,
+        five: (E) -> F,
+        six: (F) -> G,
+        seven: (G) -> H,
+        eight: (H) -> R): Iterable<R> =
+        zero()
+                .map(one)
+                .map(two)
+                .map(three)
+                .map(four)
+                .map(five)
+                .map(six)
+                .map(seven)
+                .map(eight)
+
+/**
+ * Composes an [Iterable] from multiple functions chained by [Iterable.map]
+ *
+ * @return composed Observable
+ */
+fun <A, B, C, D, E, F, G, H, I, R> doMI(
+        zero: () -> Iterable<A>,
+        one: (A) -> B,
+        two: (B) -> C,
+        three: (C) -> D,
+        four: (D) -> E,
+        five: (E) -> F,
+        six: (F) -> G,
+        seven: (G) -> H,
+        eight: (H) -> I,
+        nine: (I) -> R): Iterable<R> =
+        zero()
+                .map(one)
+                .map(two)
+                .map(three)
+                .map(four)
+                .map(five)
+                .map(six)
+                .map(seven)
+                .map(eight)
+                .map(nine)
