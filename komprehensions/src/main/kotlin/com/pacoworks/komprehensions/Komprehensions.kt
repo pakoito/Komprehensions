@@ -19,9 +19,9 @@
 package com.pacoworks.komprehensions
 
 /**
- * Composes an [rx.Observable] from multiple creation functions chained by let.
+ * Composes a sequence from multiple creation functions chained by let.
  *
- * @composed Observable
+ * @return chain
  */
 fun <A, R> doL(
         zero: () -> A,
@@ -32,9 +32,9 @@ fun <A, R> doL(
                 }
 
 /**
- * Composes an [rx.Observable] from multiple creation functions chained by let.
+ * Composes a sequence from multiple creation functions chained by let.
  *
- * @composed Observable
+ * @return chain
  */
 fun <A, B, R> doL(
         zero: () -> A,
@@ -49,9 +49,9 @@ fun <A, B, R> doL(
                 }
 
 /**
- * Composes an [rx.Observable] from multiple creation functions chained by let.
+ * Composes a sequence from multiple creation functions chained by let.
  *
- * @composed Observable
+ * @return chain
  */
 fun <A, B, C, R> doL(
         zero: () -> A,
@@ -70,9 +70,9 @@ fun <A, B, C, R> doL(
                 }
 
 /**
- * Composes an [rx.Observable] from multiple creation functions chained by let.
+ * Composes a sequence from multiple creation functions chained by let.
  *
- * @composed Observable
+ * @return chain
  */
 fun <A, B, C, D, R> doL(
         zero: () -> A,
@@ -95,9 +95,9 @@ fun <A, B, C, D, R> doL(
                 }
 
 /**
- * Composes an [rx.Observable] from multiple creation functions chained by let.
+ * Composes a sequence from multiple creation functions chained by let.
  *
- * @composed Observable
+ * @return chain
  */
 fun <A, B, C, D, E, R> doL(
         zero: () -> A,
@@ -124,9 +124,9 @@ fun <A, B, C, D, E, R> doL(
                 }
 
 /**
- * Composes an [rx.Observable] from multiple creation functions chained by let.
+ * Composes a sequence from multiple creation functions chained by let.
  *
- * @composed Observable
+ * @return chain
  */
 fun <A, B, C, D, E, F, R> doL(
         zero: () -> A,
@@ -157,9 +157,9 @@ fun <A, B, C, D, E, F, R> doL(
                 }
 
 /**
- * Composes an [rx.Observable] from multiple creation functions chained by let.
+ * Composes a sequence from multiple creation functions chained by let.
  *
- * @composed Observable
+ * @return chain
  */
 fun <A, B, C, D, E, F, G, R> doL(
         zero: () -> A,
@@ -194,9 +194,9 @@ fun <A, B, C, D, E, F, G, R> doL(
                 }
 
 /**
- * Composes an [rx.Observable] from multiple creation functions chained by let.
+ * Composes a sequence from multiple creation functions chained by let.
  *
- * @composed Observable
+ * @return chain
  */
 fun <A, B, C, D, E, F, G, H, R> doL(
         zero: () -> A,
@@ -235,9 +235,9 @@ fun <A, B, C, D, E, F, G, H, R> doL(
                 }
 
 /**
- * Composes an [rx.Observable] from multiple creation functions chained by let.
+ * Composes a sequence from multiple creation functions chained by let.
  *
- * @composed Observable
+ * @return chain
  */
 fun <A, B, C, D, E, F, G, H, I, R> doL(
         zero: () -> A,
@@ -280,9 +280,9 @@ fun <A, B, C, D, E, F, G, H, I, R> doL(
                 }
 
 /**
- * Composes an [rx.Observable] from multiple creation functions chained by andThen.
+ * Composes an sequence from multiple creation functions chained by andThen.
  *
- * @composed Observable
+ * @return chain
  */
 fun <A: Chainable, R: Chainable> doCh(
         zero: () -> A,
@@ -293,9 +293,9 @@ fun <A: Chainable, R: Chainable> doCh(
                 }
 
 /**
- * Composes an [rx.Observable] from multiple creation functions chained by andThen.
+ * Composes an sequence from multiple creation functions chained by andThen.
  *
- * @composed Observable
+ * @return chain
  */
 fun <A: Chainable, B: Chainable, R: Chainable> doCh(
         zero: () -> A,
@@ -310,9 +310,9 @@ fun <A: Chainable, B: Chainable, R: Chainable> doCh(
                 }
 
 /**
- * Composes an [rx.Observable] from multiple creation functions chained by andThen.
+ * Composes an sequence from multiple creation functions chained by andThen.
  *
- * @composed Observable
+ * @return chain
  */
 fun <A: Chainable, B: Chainable, C: Chainable, R: Chainable> doCh(
         zero: () -> A,
@@ -331,9 +331,9 @@ fun <A: Chainable, B: Chainable, C: Chainable, R: Chainable> doCh(
                 }
 
 /**
- * Composes an [rx.Observable] from multiple creation functions chained by andThen.
+ * Composes an sequence from multiple creation functions chained by andThen.
  *
- * @composed Observable
+ * @return chain
  */
 fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, R: Chainable> doCh(
         zero: () -> A,
@@ -356,9 +356,9 @@ fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, R: Chainable> doCh(
                 }
 
 /**
- * Composes an [rx.Observable] from multiple creation functions chained by andThen.
+ * Composes an sequence from multiple creation functions chained by andThen.
  *
- * @composed Observable
+ * @return chain
  */
 fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, R: Chainable> doCh(
         zero: () -> A,
@@ -385,9 +385,9 @@ fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, R: Ch
                 }
 
 /**
- * Composes an [rx.Observable] from multiple creation functions chained by andThen.
+ * Composes an sequence from multiple creation functions chained by andThen.
  *
- * @composed Observable
+ * @return chain
  */
 fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Chainable, R: Chainable> doCh(
         zero: () -> A,
@@ -418,9 +418,9 @@ fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Ch
                 }
 
 /**
- * Composes an [rx.Observable] from multiple creation functions chained by andThen.
+ * Composes an sequence from multiple creation functions chained by andThen.
  *
- * @composed Observable
+ * @return chain
  */
 fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Chainable, G: Chainable, R: Chainable> doCh(
         zero: () -> A,
@@ -455,9 +455,9 @@ fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Ch
                 }
 
 /**
- * Composes an [rx.Observable] from multiple creation functions chained by andThen.
+ * Composes an sequence from multiple creation functions chained by andThen.
  *
- * @composed Observable
+ * @return chain
  */
 fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Chainable, G: Chainable, H: Chainable, R: Chainable> doCh(
         zero: () -> A,
@@ -496,9 +496,9 @@ fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Ch
                 }
 
 /**
- * Composes an [rx.Observable] from multiple creation functions chained by andThen.
+ * Composes an sequence from multiple creation functions chained by andThen.
  *
- * @composed Observable
+ * @return chain
  */
 fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Chainable, G: Chainable, H: Chainable, I: Chainable, R: Chainable> doCh(
         zero: () -> A,
@@ -529,6 +529,267 @@ fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Ch
                                                                                                     .andThen { h ->
                                                                                                         eight.invoke(a, b, c, d, e, f, g, h)
                                                                                                                 .andThen { i ->
+                                                                                                                    nine.invoke(a, b, c, d, e, f, g, h, i)
+                                                                                                                }
+                                                                                                    }
+                                                                                        }
+                                                                            }
+                                                                }
+                                                    }
+                                        }
+                            }
+                }
+
+/**
+ * Composes an [List] from multiple creation functions chained by flatMap.
+ *
+ * @return list
+ */
+fun <A, R> doM(
+        zero: () -> Iterable<A>,
+        one: (A) -> List<R>): List<R> =
+        zero.invoke()
+                .flatMap { a ->
+                    one.invoke(a)
+                }
+
+/**
+ * Composes an [List] from multiple creation functions chained by flatMap.
+ *
+ * @return list
+ */
+fun <A, B, R> doM(
+        zero: () -> Iterable<A>,
+        one: (A) -> List<B>,
+        two: (A, B) -> List<R>): List<R> =
+        zero.invoke()
+                .flatMap { a ->
+                    one.invoke(a)
+                            .flatMap { b ->
+                                two.invoke(a, b)
+                            }
+                }
+
+/**
+ * Composes an [List] from multiple creation functions chained by flatMap.
+ *
+ * @return list
+ */
+fun <A, B, C, R> doM(
+        zero: () -> Iterable<A>,
+        one: (A) -> List<B>,
+        two: (A, B) -> List<C>,
+        three: (A, B, C) -> List<R>): List<R> =
+        zero.invoke()
+                .flatMap { a ->
+                    one.invoke(a)
+                            .flatMap { b ->
+                                two.invoke(a, b)
+                                        .flatMap { c ->
+                                            three.invoke(a, b, c)
+                                        }
+                            }
+                }
+
+/**
+ * Composes an [List] from multiple creation functions chained by flatMap.
+ *
+ * @return list
+ */
+fun <A, B, C, D, R> doM(
+        zero: () -> Iterable<A>,
+        one: (A) -> List<B>,
+        two: (A, B) -> List<C>,
+        three: (A, B, C) -> List<D>,
+        four: (A, B, C, D) -> List<R>): List<R> =
+        zero.invoke()
+                .flatMap { a ->
+                    one.invoke(a)
+                            .flatMap { b ->
+                                two.invoke(a, b)
+                                        .flatMap { c ->
+                                            three.invoke(a, b, c)
+                                                    .flatMap { d ->
+                                                        four.invoke(a, b, c, d)
+                                                    }
+                                        }
+                            }
+                }
+
+/**
+ * Composes an [List] from multiple creation functions chained by flatMap.
+ *
+ * @return list
+ */
+fun <A, B, C, D, E, R> doM(
+        zero: () -> Iterable<A>,
+        one: (A) -> List<B>,
+        two: (A, B) -> List<C>,
+        three: (A, B, C) -> List<D>,
+        four: (A, B, C, D) -> List<E>,
+        five: (A, B, C, D, E) -> List<R>): List<R> =
+        zero.invoke()
+                .flatMap { a ->
+                    one.invoke(a)
+                            .flatMap { b ->
+                                two.invoke(a, b)
+                                        .flatMap { c ->
+                                            three.invoke(a, b, c)
+                                                    .flatMap { d ->
+                                                        four.invoke(a, b, c, d)
+                                                                .flatMap { e ->
+                                                                    five.invoke(a, b, c, d, e)
+                                                                }
+                                                    }
+                                        }
+                            }
+                }
+
+/**
+ * Composes an [List] from multiple creation functions chained by flatMap.
+ *
+ * @return list
+ */
+fun <A, B, C, D, E, F, R> doM(
+        zero: () -> Iterable<A>,
+        one: (A) -> List<B>,
+        two: (A, B) -> List<C>,
+        three: (A, B, C) -> List<D>,
+        four: (A, B, C, D) -> List<E>,
+        five: (A, B, C, D, E) -> List<F>,
+        six: (A, B, C, D, E, F) -> List<R>): List<R> =
+        zero.invoke()
+                .flatMap { a ->
+                    one.invoke(a)
+                            .flatMap { b ->
+                                two.invoke(a, b)
+                                        .flatMap { c ->
+                                            three.invoke(a, b, c)
+                                                    .flatMap { d ->
+                                                        four.invoke(a, b, c, d)
+                                                                .flatMap { e ->
+                                                                    five.invoke(a, b, c, d, e)
+                                                                            .flatMap { f ->
+                                                                                six.invoke(a, b, c, d, e, f)
+                                                                            }
+                                                                }
+                                                    }
+                                        }
+                            }
+                }
+
+/**
+ * Composes an [List] from multiple creation functions chained by flatMap.
+ *
+ * @return list
+ */
+fun <A, B, C, D, E, F, G, R> doM(
+        zero: () -> Iterable<A>,
+        one: (A) -> List<B>,
+        two: (A, B) -> List<C>,
+        three: (A, B, C) -> List<D>,
+        four: (A, B, C, D) -> List<E>,
+        five: (A, B, C, D, E) -> List<F>,
+        six: (A, B, C, D, E, F) -> List<G>,
+        seven: (A, B, C, D, E, F, G) -> List<R>): List<R> =
+        zero.invoke()
+                .flatMap { a ->
+                    one.invoke(a)
+                            .flatMap { b ->
+                                two.invoke(a, b)
+                                        .flatMap { c ->
+                                            three.invoke(a, b, c)
+                                                    .flatMap { d ->
+                                                        four.invoke(a, b, c, d)
+                                                                .flatMap { e ->
+                                                                    five.invoke(a, b, c, d, e)
+                                                                            .flatMap { f ->
+                                                                                six.invoke(a, b, c, d, e, f)
+                                                                                        .flatMap { g ->
+                                                                                            seven.invoke(a, b, c, d, e, f, g)
+                                                                                        }
+                                                                            }
+                                                                }
+                                                    }
+                                        }
+                            }
+                }
+
+/**
+ * Composes an [List] from multiple creation functions chained by flatMap.
+ *
+ * @return list
+ */
+fun <A, B, C, D, E, F, G, H, R> doM(
+        zero: () -> Iterable<A>,
+        one: (A) -> List<B>,
+        two: (A, B) -> List<C>,
+        three: (A, B, C) -> List<D>,
+        four: (A, B, C, D) -> List<E>,
+        five: (A, B, C, D, E) -> List<F>,
+        six: (A, B, C, D, E, F) -> List<G>,
+        seven: (A, B, C, D, E, F, G) -> List<H>,
+        eight: (A, B, C, D, E, F, G, H) -> List<R>): List<R> =
+        zero.invoke()
+                .flatMap { a ->
+                    one.invoke(a)
+                            .flatMap { b ->
+                                two.invoke(a, b)
+                                        .flatMap { c ->
+                                            three.invoke(a, b, c)
+                                                    .flatMap { d ->
+                                                        four.invoke(a, b, c, d)
+                                                                .flatMap { e ->
+                                                                    five.invoke(a, b, c, d, e)
+                                                                            .flatMap { f ->
+                                                                                six.invoke(a, b, c, d, e, f)
+                                                                                        .flatMap { g ->
+                                                                                            seven.invoke(a, b, c, d, e, f, g)
+                                                                                                    .flatMap { h ->
+                                                                                                        eight.invoke(a, b, c, d, e, f, g, h)
+                                                                                                    }
+                                                                                        }
+                                                                            }
+                                                                }
+                                                    }
+                                        }
+                            }
+                }
+
+/**
+ * Composes an [List] from multiple creation functions chained by flatMap.
+ *
+ * @return list
+ */
+fun <A, B, C, D, E, F, G, H, I, R> doM(
+        zero: () -> Iterable<A>,
+        one: (A) -> List<B>,
+        two: (A, B) -> List<C>,
+        three: (A, B, C) -> List<D>,
+        four: (A, B, C, D) -> List<E>,
+        five: (A, B, C, D, E) -> List<F>,
+        six: (A, B, C, D, E, F) -> List<G>,
+        seven: (A, B, C, D, E, F, G) -> List<H>,
+        eight: (A, B, C, D, E, F, G, H) -> List<I>,
+        nine: (A, B, C, D, E, F, G, H, I) -> List<R>): List<R> =
+        zero.invoke()
+                .flatMap { a ->
+                    one.invoke(a)
+                            .flatMap { b ->
+                                two.invoke(a, b)
+                                        .flatMap { c ->
+                                            three.invoke(a, b, c)
+                                                    .flatMap { d ->
+                                                        four.invoke(a, b, c, d)
+                                                                .flatMap { e ->
+                                                                    five.invoke(a, b, c, d, e)
+                                                                            .flatMap { f ->
+                                                                                six.invoke(a, b, c, d, e, f)
+                                                                                        .flatMap { g ->
+                                                                                            seven.invoke(a, b, c, d, e, f, g)
+                                                                                                    .flatMap { h ->
+                                                                                                        eight.invoke(a, b, c, d, e, f, g, h)
+                                                                                                                .flatMap { i ->
                                                                                                                     nine.invoke(a, b, c, d, e, f, g, h, i)
                                                                                                                 }
                                                                                                     }

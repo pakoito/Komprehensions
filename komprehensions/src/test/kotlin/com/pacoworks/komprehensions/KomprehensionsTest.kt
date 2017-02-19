@@ -40,7 +40,7 @@ class KomprehensionsTest {
 
     @Test
     fun fourL() {
-        Assert.assertEquals(doL(zero(4), one(true), two("result"), three("other"), four("other".length.toLong())), "other".length)
+        Assert.assertEquals(doL(zero(4), one(true), two("result"), three("other"), four("other".length.toLong())), "other".length.toLong())
     }
 
     @Test
