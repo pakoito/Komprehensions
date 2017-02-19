@@ -108,7 +108,8 @@ repositories {
     
 dependencies {
     ...
-    compile 'com.github.pakoito:Komprehensions:1.2.0'
+    compile 'com.github.pakoito.Komprehensions:komprehensions:1.2.0'
+    compile 'com.github.pakoito.Komprehensions:komprehensions-rx:1.2.0'
     ...
 }
 ```
@@ -123,8 +124,14 @@ or to your `pom.xml`
 </repositories>
 
 <dependency>
-    <groupId>com.github.pakoito</groupId>
-    <artifactId>Komprehensions</artifactId>
+    <groupId>com.github.pakoito.Komprehensions</groupId>
+    <artifactId>komprehensions</artifactId>
+    <version>1.2.0</version>
+</dependency>
+
+<dependency>
+    <groupId>com.github.pakoito.Komprehensions</groupId>
+    <artifactId>komprehensions-rx</artifactId>
     <version>1.2.0</version>
 </dependency>
 ```
