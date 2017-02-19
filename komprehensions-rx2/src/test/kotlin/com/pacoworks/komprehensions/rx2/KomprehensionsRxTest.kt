@@ -41,7 +41,7 @@ class KomprehensionsRxTest {
 
     @Test
     fun fourFM() {
-        Assert.assertEquals(doFM(zero(4), one(true), two("result"), three("other"), four("other".length.toLong())).blockingFirst(), "other".length)
+        Assert.assertEquals(doFM(zero(4), one(true), two("result"), three("other"), four("other".length.toLong())).blockingFirst(), "other".length.toLong())
     }
 
     @Test
@@ -90,7 +90,7 @@ class KomprehensionsRxTest {
 
     @Test
     fun fourCM() {
-        Assert.assertEquals(doCM(zero(4), one(true), two("result"), three("other"), four("other".length.toLong())).blockingFirst(), "other".length)
+        Assert.assertEquals(doCM(zero(4), one(true), two("result"), three("other"), four("other".length.toLong())).blockingFirst(), "other".length.toLong())
     }
 
     @Test
@@ -139,7 +139,7 @@ class KomprehensionsRxTest {
 
     @Test
     fun fourSM() {
-        Assert.assertEquals(doSM(zero(4), one(true), two("result"), three("other"), four("other".length.toLong())).blockingFirst(), "other".length)
+        Assert.assertEquals(doSM(zero(4), one(true), two("result"), three("other"), four("other".length.toLong())).blockingFirst(), "other".length.toLong())
     }
 
     @Test
@@ -178,7 +178,7 @@ class KomprehensionsRxTest {
 
     @Test
     fun twoCo() {
-        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt()).blockingFirst() as Long, 1)
+        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt()).blockingFirst().toLong(), 1)
     }
 
     @Test
@@ -188,7 +188,7 @@ class KomprehensionsRxTest {
 
     @Test
     fun fourCo() {
-        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).blockingFirst() as Long, 2)
+        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).blockingFirst().toLong(), 2)
     }
 
     @Test
@@ -198,7 +198,7 @@ class KomprehensionsRxTest {
 
     @Test
     fun sixCo() {
-        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).blockingFirst() as Long, 3)
+        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).blockingFirst().toLong(), 3)
     }
 
     @Test
@@ -208,7 +208,7 @@ class KomprehensionsRxTest {
 
     @Test
     fun eightCo() {
-        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).blockingFirst() as Long, 4)
+        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).blockingFirst().toLong(), 4)
     }
 
     @Test
