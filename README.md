@@ -108,7 +108,7 @@ repositories {
     
 dependencies {
     ...
-    compile 'com.github.pakoito:Komprehensions:1.1.0'
+    compile 'com.github.pakoito:Komprehensions:1.2.0'
     ...
 }
 ```
@@ -125,7 +125,7 @@ or to your `pom.xml`
 <dependency>
     <groupId>com.github.pakoito</groupId>
     <artifactId>Komprehensions</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
 </dependency>
 ```
 
