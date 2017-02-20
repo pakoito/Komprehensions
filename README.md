@@ -56,7 +56,7 @@ Komprehensions contains functions `doMI()` for `flatMap()` chaining of `Iterable
 
 Komprehensions contains functions `doFMI()` for `flatMap()` chaining of `Iterable`. Each takes from 1 to 9 function each with an increasing number of parameters and returns an `Iterable`, then flattens the return into an `Iterable` of the type of the return of the last function.
 
-### Komprehensions-rx
+## Komprehensions-rx
 
 Komprehensions-rx is an extension module that allows chaining of [RxJava](https://github.com/ReactiveX/RxJava) `Observables`. It is available for both RxJava 1 and 2
 
