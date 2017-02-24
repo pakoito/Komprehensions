@@ -26,48 +26,48 @@ class KomprehensionsRxTest {
 
     @Test
     fun oneFM() {
-        Assert.assertEquals(doFM(zero(1), one(true)).toBlocking().first(), true)
+        Assert.assertEquals(doFlatMap(zero(1), one(true)).toBlocking().first(), true)
     }
 
     @Test
     fun twoFM() {
-        Assert.assertEquals(doFM(zero(2), one(true), two("result")).toBlocking().first(), "result")
+        Assert.assertEquals(doFlatMap(zero(2), one(true), two("result")).toBlocking().first(), "result")
     }
 
     @Test
     fun threeFM() {
-        Assert.assertEquals(doFM(zero(3), one(true), two("result"), three("other")).toBlocking().first(), "other")
+        Assert.assertEquals(doFlatMap(zero(3), one(true), two("result"), three("other")).toBlocking().first(), "other")
     }
 
     @Test
     fun fourFM() {
-        Assert.assertEquals(doFM(zero(4), one(true), two("result"), three("other"), four("other".length.toLong())).toBlocking().first(), "other".length.toLong())
+        Assert.assertEquals(doFlatMap(zero(4), one(true), two("result"), three("other"), four("other".length.toLong())).toBlocking().first(), "other".length.toLong())
     }
 
     @Test
     fun fiveFM() {
-        Assert.assertEquals(doFM(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5)).toBlocking().first(), false)
+        Assert.assertEquals(doFlatMap(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5)).toBlocking().first(), false)
     }
 
     @Test
     fun sixFM() {
-        Assert.assertEquals(doFM(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false))).toBlocking().first(), "false")
+        Assert.assertEquals(doFlatMap(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false))).toBlocking().first(), "false")
     }
 
     @Test
     fun sevenFM() {
-        Assert.assertEquals(doFM(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true")).toBlocking().first(), false)
+        Assert.assertEquals(doFlatMap(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true")).toBlocking().first(), false)
     }
 
     @Test
     fun eightFM() {
-        Assert.assertEquals(doFM(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true"), eight(Long::class.java)).toBlocking().first(), Long::class.java)
+        Assert.assertEquals(doFlatMap(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true"), eight(Long::class.java)).toBlocking().first(), Long::class.java)
     }
 
     @Test
     fun nineFM() {
         val observer: TestSubscriber<Any> = TestSubscriber.create()
-        doFM(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true"), eight(Long::class.java), nine()).subscribe(observer)
+        doFlatMap(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true"), eight(Long::class.java), nine()).subscribe(observer)
         observer.awaitTerminalEvent()
         observer.assertCompleted()
         observer.assertNoErrors()
@@ -76,48 +76,48 @@ class KomprehensionsRxTest {
 
     @Test
     fun oneCM() {
-        Assert.assertEquals(doCM(zero(1), one(true)).toBlocking().first(), true)
+        Assert.assertEquals(doConcatMap(zero(1), one(true)).toBlocking().first(), true)
     }
 
     @Test
     fun twoCM() {
-        Assert.assertEquals(doCM(zero(2), one(true), two("result")).toBlocking().first(), "result")
+        Assert.assertEquals(doConcatMap(zero(2), one(true), two("result")).toBlocking().first(), "result")
     }
 
     @Test
     fun threeCM() {
-        Assert.assertEquals(doCM(zero(3), one(true), two("result"), three("other")).toBlocking().first(), "other")
+        Assert.assertEquals(doConcatMap(zero(3), one(true), two("result"), three("other")).toBlocking().first(), "other")
     }
 
     @Test
     fun fourCM() {
-        Assert.assertEquals(doCM(zero(4), one(true), two("result"), three("other"), four("other".length.toLong())).toBlocking().first(), "other".length.toLong())
+        Assert.assertEquals(doConcatMap(zero(4), one(true), two("result"), three("other"), four("other".length.toLong())).toBlocking().first(), "other".length.toLong())
     }
 
     @Test
     fun fiveCM() {
-        Assert.assertEquals(doCM(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5)).toBlocking().first(), false)
+        Assert.assertEquals(doConcatMap(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5)).toBlocking().first(), false)
     }
 
     @Test
     fun sixCM() {
-        Assert.assertEquals(doCM(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false))).toBlocking().first(), "false")
+        Assert.assertEquals(doConcatMap(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false))).toBlocking().first(), "false")
     }
 
     @Test
     fun sevenCM() {
-        Assert.assertEquals(doCM(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true")).toBlocking().first(), false)
+        Assert.assertEquals(doConcatMap(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true")).toBlocking().first(), false)
     }
 
     @Test
     fun eightCM() {
-        Assert.assertEquals(doCM(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true"), eight(Long::class.java)).toBlocking().first(), Long::class.java)
+        Assert.assertEquals(doConcatMap(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true"), eight(Long::class.java)).toBlocking().first(), Long::class.java)
     }
 
     @Test
     fun nineCM() {
         val observer: TestSubscriber<Any> = TestSubscriber.create()
-        doCM(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true"), eight(Long::class.java), nine()).subscribe(observer)
+        doConcatMap(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true"), eight(Long::class.java), nine()).subscribe(observer)
         observer.awaitTerminalEvent()
         observer.assertCompleted()
         observer.assertNoErrors()
@@ -126,48 +126,48 @@ class KomprehensionsRxTest {
 
     @Test
     fun oneSM() {
-        Assert.assertEquals(doSM(zero(1), one(true)).toBlocking().first(), true)
+        Assert.assertEquals(doSwitchMap(zero(1), one(true)).toBlocking().first(), true)
     }
 
     @Test
     fun twoSM() {
-        Assert.assertEquals(doSM(zero(2), one(true), two("result")).toBlocking().first(), "result")
+        Assert.assertEquals(doSwitchMap(zero(2), one(true), two("result")).toBlocking().first(), "result")
     }
 
     @Test
     fun threeSM() {
-        Assert.assertEquals(doSM(zero(3), one(true), two("result"), three("other")).toBlocking().first(), "other")
+        Assert.assertEquals(doSwitchMap(zero(3), one(true), two("result"), three("other")).toBlocking().first(), "other")
     }
 
     @Test
     fun fourSM() {
-        Assert.assertEquals(doSM(zero(4), one(true), two("result"), three("other"), four("other".length.toLong())).toBlocking().first(), "other".length.toLong())
+        Assert.assertEquals(doSwitchMap(zero(4), one(true), two("result"), three("other"), four("other".length.toLong())).toBlocking().first(), "other".length.toLong())
     }
 
     @Test
     fun fiveSM() {
-        Assert.assertEquals(doSM(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5)).toBlocking().first(), false)
+        Assert.assertEquals(doSwitchMap(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5)).toBlocking().first(), false)
     }
 
     @Test
     fun sixSM() {
-        Assert.assertEquals(doSM(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false))).toBlocking().first(), "false")
+        Assert.assertEquals(doSwitchMap(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false))).toBlocking().first(), "false")
     }
 
     @Test
     fun sevenSM() {
-        Assert.assertEquals(doSM(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true")).toBlocking().first(), false)
+        Assert.assertEquals(doSwitchMap(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true")).toBlocking().first(), false)
     }
 
     @Test
     fun eightSM() {
-        Assert.assertEquals(doSM(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true"), eight(Long::class.java)).toBlocking().first(), Long::class.java)
+        Assert.assertEquals(doSwitchMap(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true"), eight(Long::class.java)).toBlocking().first(), Long::class.java)
     }
 
     @Test
     fun nineSM() {
         val observer: TestSubscriber<Any> = TestSubscriber.create()
-        doSM(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true"), eight(Long::class.java), nine()).subscribe(observer)
+        doSwitchMap(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true"), eight(Long::class.java), nine()).subscribe(observer)
         observer.awaitTerminalEvent()
         observer.assertCompleted()
         observer.assertNoErrors()
@@ -176,47 +176,47 @@ class KomprehensionsRxTest {
 
     @Test
     fun oneCo() {
-        Assert.assertEquals(doCo(zero(0), intIncrementToString()).toBlocking().first(), "1")
+        Assert.assertEquals(doCompose(zero(0), intIncrementToString()).toBlocking().first(), "1")
     }
 
     @Test
     fun twoCo() {
-        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt()).toBlocking().first().toLong(), 1)
+        Assert.assertEquals(doCompose(zero(0), intIncrementToString(), stringToInt()).toBlocking().first().toLong(), 1)
     }
 
     @Test
     fun threeCo() {
-        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first(), "2")
+        Assert.assertEquals(doCompose(zero(0), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first(), "2")
     }
 
     @Test
     fun fourCo() {
-        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).toBlocking().first().toLong(), 2)
+        Assert.assertEquals(doCompose(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).toBlocking().first().toLong(), 2)
     }
 
     @Test
     fun fiveCo() {
-        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first(), "3")
+        Assert.assertEquals(doCompose(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first(), "3")
     }
 
     @Test
     fun sixCo() {
-        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).toBlocking().first().toLong(), 3)
+        Assert.assertEquals(doCompose(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).toBlocking().first().toLong(), 3)
     }
 
     @Test
     fun sevenCo() {
-        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first(), "4")
+        Assert.assertEquals(doCompose(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first(), "4")
     }
 
     @Test
     fun eightCo() {
-        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).toBlocking().first().toLong(), 4)
+        Assert.assertEquals(doCompose(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).toBlocking().first().toLong(), 4)
     }
 
     @Test
     fun nineCo() {
-        Assert.assertEquals(doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first(), "5")
+        Assert.assertEquals(doCompose(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first(), "5")
     }
 }
 

@@ -26,7 +26,7 @@ import io.reactivex.ObservableTransformer
  *
  * @return composed Observable
  */
-fun <A, R> doFM(
+fun <A, R> doFlatMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<R>): Observable<R> =
         zero.invoke()
@@ -39,7 +39,7 @@ fun <A, R> doFM(
  *
  * @return composed Observable
  */
-fun <A, B, R> doFM(
+fun <A, B, R> doFlatMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<R>): Observable<R> =
@@ -56,7 +56,7 @@ fun <A, B, R> doFM(
  *
  * @return composed Observable
  */
-fun <A, B, C, R> doFM(
+fun <A, B, C, R> doFlatMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -77,7 +77,7 @@ fun <A, B, C, R> doFM(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, R> doFM(
+fun <A, B, C, D, R> doFlatMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -102,7 +102,7 @@ fun <A, B, C, D, R> doFM(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, R> doFM(
+fun <A, B, C, D, E, R> doFlatMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -131,7 +131,7 @@ fun <A, B, C, D, E, R> doFM(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, R> doFM(
+fun <A, B, C, D, E, F, R> doFlatMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -164,7 +164,7 @@ fun <A, B, C, D, E, F, R> doFM(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, G, R> doFM(
+fun <A, B, C, D, E, F, G, R> doFlatMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -201,7 +201,7 @@ fun <A, B, C, D, E, F, G, R> doFM(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, G, H, R> doFM(
+fun <A, B, C, D, E, F, G, H, R> doFlatMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -242,7 +242,7 @@ fun <A, B, C, D, E, F, G, H, R> doFM(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, G, H, I, R> doFM(
+fun <A, B, C, D, E, F, G, H, I, R> doFlatMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -287,7 +287,7 @@ fun <A, B, C, D, E, F, G, H, I, R> doFM(
  *
  * @return composed Observable
  */
-fun <A, R> doCM(
+fun <A, R> doConcatMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<R>): Observable<R> =
         zero.invoke()
@@ -300,7 +300,7 @@ fun <A, R> doCM(
  *
  * @return composed Observable
  */
-fun <A, B, R> doCM(
+fun <A, B, R> doConcatMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<R>): Observable<R> =
@@ -317,7 +317,7 @@ fun <A, B, R> doCM(
  *
  * @return composed Observable
  */
-fun <A, B, C, R> doCM(
+fun <A, B, C, R> doConcatMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -338,7 +338,7 @@ fun <A, B, C, R> doCM(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, R> doCM(
+fun <A, B, C, D, R> doConcatMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -363,7 +363,7 @@ fun <A, B, C, D, R> doCM(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, R> doCM(
+fun <A, B, C, D, E, R> doConcatMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -392,7 +392,7 @@ fun <A, B, C, D, E, R> doCM(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, R> doCM(
+fun <A, B, C, D, E, F, R> doConcatMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -425,7 +425,7 @@ fun <A, B, C, D, E, F, R> doCM(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, G, R> doCM(
+fun <A, B, C, D, E, F, G, R> doConcatMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -462,7 +462,7 @@ fun <A, B, C, D, E, F, G, R> doCM(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, G, H, R> doCM(
+fun <A, B, C, D, E, F, G, H, R> doConcatMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -503,7 +503,7 @@ fun <A, B, C, D, E, F, G, H, R> doCM(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, G, H, I, R> doCM(
+fun <A, B, C, D, E, F, G, H, I, R> doConcatMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -548,7 +548,7 @@ fun <A, B, C, D, E, F, G, H, I, R> doCM(
  *
  * @return composed Observable
  */
-fun <A, R> doSM(
+fun <A, R> doSwitchMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<R>): Observable<R> =
         zero.invoke()
@@ -561,7 +561,7 @@ fun <A, R> doSM(
  *
  * @return composed Observable
  */
-fun <A, B, R> doSM(
+fun <A, B, R> doSwitchMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<R>): Observable<R> =
@@ -578,7 +578,7 @@ fun <A, B, R> doSM(
  *
  * @return composed Observable
  */
-fun <A, B, C, R> doSM(
+fun <A, B, C, R> doSwitchMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -599,7 +599,7 @@ fun <A, B, C, R> doSM(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, R> doSM(
+fun <A, B, C, D, R> doSwitchMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -624,7 +624,7 @@ fun <A, B, C, D, R> doSM(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, R> doSM(
+fun <A, B, C, D, E, R> doSwitchMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -653,7 +653,7 @@ fun <A, B, C, D, E, R> doSM(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, R> doSM(
+fun <A, B, C, D, E, F, R> doSwitchMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -686,7 +686,7 @@ fun <A, B, C, D, E, F, R> doSM(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, G, R> doSM(
+fun <A, B, C, D, E, F, G, R> doSwitchMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -723,7 +723,7 @@ fun <A, B, C, D, E, F, G, R> doSM(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, G, H, R> doSM(
+fun <A, B, C, D, E, F, G, H, R> doSwitchMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -764,7 +764,7 @@ fun <A, B, C, D, E, F, G, H, R> doSM(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, G, H, I, R> doSM(
+fun <A, B, C, D, E, F, G, H, I, R> doSwitchMap(
         zero: () -> Observable<A>,
         one: (A) -> Observable<B>,
         two: (A, B) -> Observable<C>,
@@ -809,7 +809,7 @@ fun <A, B, C, D, E, F, G, H, I, R> doSM(
  *
  * @return composed Observable
  */
-fun <A, R> doCo(
+fun <A, R> doCompose(
         zero: () -> Observable<A>,
         one: ObservableTransformer<A, R>): Observable<R> =
         zero()
@@ -820,7 +820,7 @@ fun <A, R> doCo(
  *
  * @return composed Observable
  */
-fun <A, B, R> doCo(
+fun <A, B, R> doCompose(
         zero: () -> Observable<A>,
         one: ObservableTransformer<A, B>,
         two: ObservableTransformer<B, R>): Observable<R> =
@@ -833,7 +833,7 @@ fun <A, B, R> doCo(
  *
  * @return composed Observable
  */
-fun <A, B, C, R> doCo(
+fun <A, B, C, R> doCompose(
         zero: () -> Observable<A>,
         one: ObservableTransformer<A, B>,
         two: ObservableTransformer<B, C>,
@@ -848,7 +848,7 @@ fun <A, B, C, R> doCo(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, R> doCo(
+fun <A, B, C, D, R> doCompose(
         zero: () -> Observable<A>,
         one: ObservableTransformer<A, B>,
         two: ObservableTransformer<B, C>,
@@ -865,7 +865,7 @@ fun <A, B, C, D, R> doCo(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, R> doCo(
+fun <A, B, C, D, E, R> doCompose(
         zero: () -> Observable<A>,
         one: ObservableTransformer<A, B>,
         two: ObservableTransformer<B, C>,
@@ -884,7 +884,7 @@ fun <A, B, C, D, E, R> doCo(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, R> doCo(
+fun <A, B, C, D, E, F, R> doCompose(
         zero: () -> Observable<A>,
         one: ObservableTransformer<A, B>,
         two: ObservableTransformer<B, C>,
@@ -905,7 +905,7 @@ fun <A, B, C, D, E, F, R> doCo(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, G, R> doCo(
+fun <A, B, C, D, E, F, G, R> doCompose(
         zero: () -> Observable<A>,
         one: ObservableTransformer<A, B>,
         two: ObservableTransformer<B, C>,
@@ -928,7 +928,7 @@ fun <A, B, C, D, E, F, G, R> doCo(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, G, H, R> doCo(
+fun <A, B, C, D, E, F, G, H, R> doCompose(
         zero: () -> Observable<A>,
         one: ObservableTransformer<A, B>,
         two: ObservableTransformer<B, C>,
@@ -953,7 +953,7 @@ fun <A, B, C, D, E, F, G, H, R> doCo(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, G, H, I, R> doCo(
+fun <A, B, C, D, E, F, G, H, I, R> doCompose(
         zero: () -> Observable<A>,
         one: ObservableTransformer<A, B>,
         two: ObservableTransformer<B, C>,
