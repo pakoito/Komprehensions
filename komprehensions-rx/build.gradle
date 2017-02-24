@@ -23,7 +23,7 @@ group = 'com.github.pakoito'
 dependencies {
     testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile 'io.reactivex:rxjava:1.1.9'
+    compile 'io.reactivex:rxjava:1.2.7'
 }
 
 install {
@@ -40,7 +40,7 @@ install {
     }
 }
 buildscript {
-    ext.kotlin_version = '1.0.3'
+    ext.kotlin_version = '1.0.6'
     repositories {
         mavenCentral()
     }
