@@ -23,7 +23,7 @@ package com.pacoworks.komprehensions
  *
  * @return chain
  */
-fun <A, R> doL(
+fun <A, R> doLet(
         zero: () -> A,
         one: (A) -> R): R =
         zero.invoke()
@@ -36,7 +36,7 @@ fun <A, R> doL(
  *
  * @return chain
  */
-fun <A, B, R> doL(
+fun <A, B, R> doLet(
         zero: () -> A,
         one: (A) -> B,
         two: (A, B) -> R): R =
@@ -53,7 +53,7 @@ fun <A, B, R> doL(
  *
  * @return chain
  */
-fun <A, B, C, R> doL(
+fun <A, B, C, R> doLet(
         zero: () -> A,
         one: (A) -> B,
         two: (A, B) -> C,
@@ -74,7 +74,7 @@ fun <A, B, C, R> doL(
  *
  * @return chain
  */
-fun <A, B, C, D, R> doL(
+fun <A, B, C, D, R> doLet(
         zero: () -> A,
         one: (A) -> B,
         two: (A, B) -> C,
@@ -99,7 +99,7 @@ fun <A, B, C, D, R> doL(
  *
  * @return chain
  */
-fun <A, B, C, D, E, R> doL(
+fun <A, B, C, D, E, R> doLet(
         zero: () -> A,
         one: (A) -> B,
         two: (A, B) -> C,
@@ -128,7 +128,7 @@ fun <A, B, C, D, E, R> doL(
  *
  * @return chain
  */
-fun <A, B, C, D, E, F, R> doL(
+fun <A, B, C, D, E, F, R> doLet(
         zero: () -> A,
         one: (A) -> B,
         two: (A, B) -> C,
@@ -161,7 +161,7 @@ fun <A, B, C, D, E, F, R> doL(
  *
  * @return chain
  */
-fun <A, B, C, D, E, F, G, R> doL(
+fun <A, B, C, D, E, F, G, R> doLet(
         zero: () -> A,
         one: (A) -> B,
         two: (A, B) -> C,
@@ -198,7 +198,7 @@ fun <A, B, C, D, E, F, G, R> doL(
  *
  * @return chain
  */
-fun <A, B, C, D, E, F, G, H, R> doL(
+fun <A, B, C, D, E, F, G, H, R> doLet(
         zero: () -> A,
         one: (A) -> B,
         two: (A, B) -> C,
@@ -239,7 +239,7 @@ fun <A, B, C, D, E, F, G, H, R> doL(
  *
  * @return chain
  */
-fun <A, B, C, D, E, F, G, H, I, R> doL(
+fun <A, B, C, D, E, F, G, H, I, R> doLet(
         zero: () -> A,
         one: (A) -> B,
         two: (A, B) -> C,
@@ -284,7 +284,7 @@ fun <A, B, C, D, E, F, G, H, I, R> doL(
  *
  * @return chain
  */
-fun <A: Chainable, R: Chainable> doCh(
+fun <A: Chainable, R: Chainable> doChainable(
         zero: () -> A,
         one: (A) -> R): R =
         zero.invoke()
@@ -297,7 +297,7 @@ fun <A: Chainable, R: Chainable> doCh(
  *
  * @return chain
  */
-fun <A: Chainable, B: Chainable, R: Chainable> doCh(
+fun <A: Chainable, B: Chainable, R: Chainable> doChainable(
         zero: () -> A,
         one: (A) -> B,
         two: (A, B) -> R): R =
@@ -314,7 +314,7 @@ fun <A: Chainable, B: Chainable, R: Chainable> doCh(
  *
  * @return chain
  */
-fun <A: Chainable, B: Chainable, C: Chainable, R: Chainable> doCh(
+fun <A: Chainable, B: Chainable, C: Chainable, R: Chainable> doChainable(
         zero: () -> A,
         one: (A) -> B,
         two: (A, B) -> C,
@@ -335,7 +335,7 @@ fun <A: Chainable, B: Chainable, C: Chainable, R: Chainable> doCh(
  *
  * @return chain
  */
-fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, R: Chainable> doCh(
+fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, R: Chainable> doChainable(
         zero: () -> A,
         one: (A) -> B,
         two: (A, B) -> C,
@@ -360,7 +360,7 @@ fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, R: Chainable> doCh(
  *
  * @return chain
  */
-fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, R: Chainable> doCh(
+fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, R: Chainable> doChainable(
         zero: () -> A,
         one: (A) -> B,
         two: (A, B) -> C,
@@ -389,7 +389,7 @@ fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, R: Ch
  *
  * @return chain
  */
-fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Chainable, R: Chainable> doCh(
+fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Chainable, R: Chainable> doChainable(
         zero: () -> A,
         one: (A) -> B,
         two: (A, B) -> C,
@@ -422,7 +422,7 @@ fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Ch
  *
  * @return chain
  */
-fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Chainable, G: Chainable, R: Chainable> doCh(
+fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Chainable, G: Chainable, R: Chainable> doChainable(
         zero: () -> A,
         one: (A) -> B,
         two: (A, B) -> C,
@@ -459,7 +459,7 @@ fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Ch
  *
  * @return chain
  */
-fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Chainable, G: Chainable, H: Chainable, R: Chainable> doCh(
+fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Chainable, G: Chainable, H: Chainable, R: Chainable> doChainable(
         zero: () -> A,
         one: (A) -> B,
         two: (A, B) -> C,
@@ -500,7 +500,7 @@ fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Ch
  *
  * @return chain
  */
-fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Chainable, G: Chainable, H: Chainable, I: Chainable, R: Chainable> doCh(
+fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Chainable, G: Chainable, H: Chainable, I: Chainable, R: Chainable> doChainable(
         zero: () -> A,
         one: (A) -> B,
         two: (A, B) -> C,
@@ -545,7 +545,7 @@ fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Ch
  *
  * @return iterable
  */
-fun <A, R> doFMI(
+fun <A, R> doFlatMapIterator(
         zero: () -> Iterable<A>,
         one: (A) -> Iterable<R>): Iterable<R> =
         zero.invoke()
@@ -558,7 +558,7 @@ fun <A, R> doFMI(
  *
  * @return iterable
  */
-fun <A, B, R> doFMI(
+fun <A, B, R> doFlatMapIterator(
         zero: () -> Iterable<A>,
         one: (A) -> Iterable<B>,
         two: (A, B) -> Iterable<R>): Iterable<R> =
@@ -575,7 +575,7 @@ fun <A, B, R> doFMI(
  *
  * @return iterable
  */
-fun <A, B, C, R> doFMI(
+fun <A, B, C, R> doFlatMapIterator(
         zero: () -> Iterable<A>,
         one: (A) -> Iterable<B>,
         two: (A, B) -> Iterable<C>,
@@ -596,7 +596,7 @@ fun <A, B, C, R> doFMI(
  *
  * @return iterable
  */
-fun <A, B, C, D, R> doFMI(
+fun <A, B, C, D, R> doFlatMapIterator(
         zero: () -> Iterable<A>,
         one: (A) -> Iterable<B>,
         two: (A, B) -> Iterable<C>,
@@ -621,7 +621,7 @@ fun <A, B, C, D, R> doFMI(
  *
  * @return iterable
  */
-fun <A, B, C, D, E, R> doFMI(
+fun <A, B, C, D, E, R> doFlatMapIterator(
         zero: () -> Iterable<A>,
         one: (A) -> Iterable<B>,
         two: (A, B) -> Iterable<C>,
@@ -650,7 +650,7 @@ fun <A, B, C, D, E, R> doFMI(
  *
  * @return iterable
  */
-fun <A, B, C, D, E, F, R> doFMI(
+fun <A, B, C, D, E, F, R> doFlatMapIterator(
         zero: () -> Iterable<A>,
         one: (A) -> Iterable<B>,
         two: (A, B) -> Iterable<C>,
@@ -683,7 +683,7 @@ fun <A, B, C, D, E, F, R> doFMI(
  *
  * @return iterable
  */
-fun <A, B, C, D, E, F, G, R> doFMI(
+fun <A, B, C, D, E, F, G, R> doFlatMapIterator(
         zero: () -> Iterable<A>,
         one: (A) -> Iterable<B>,
         two: (A, B) -> Iterable<C>,
@@ -720,7 +720,7 @@ fun <A, B, C, D, E, F, G, R> doFMI(
  *
  * @return iterable
  */
-fun <A, B, C, D, E, F, G, H, R> doFMI(
+fun <A, B, C, D, E, F, G, H, R> doFlatMapIterator(
         zero: () -> Iterable<A>,
         one: (A) -> Iterable<B>,
         two: (A, B) -> Iterable<C>,
@@ -761,7 +761,7 @@ fun <A, B, C, D, E, F, G, H, R> doFMI(
  *
  * @return iterable
  */
-fun <A, B, C, D, E, F, G, H, I, R> doFMI(
+fun <A, B, C, D, E, F, G, H, I, R> doFlatMapIterator(
         zero: () -> Iterable<A>,
         one: (A) -> Iterable<B>,
         two: (A, B) -> Iterable<C>,
@@ -806,7 +806,7 @@ fun <A, B, C, D, E, F, G, H, I, R> doFMI(
  *
  * @return composed Observable
  */
-fun <A, R> doMI(
+fun <A, R> doMapIterator(
         zero: () -> Iterable<A>,
         one: (A) -> R): Iterable<R> =
         zero()
@@ -817,7 +817,7 @@ fun <A, R> doMI(
  *
  * @return composed Observable
  */
-fun <A, B, R> doMI(
+fun <A, B, R> doMapIterator(
         zero: () -> Iterable<A>,
         one: (A) -> B,
         two: (B) -> R): Iterable<R> =
@@ -830,7 +830,7 @@ fun <A, B, R> doMI(
  *
  * @return composed Observable
  */
-fun <A, B, C, R> doMI(
+fun <A, B, C, R> doMapIterator(
         zero: () -> Iterable<A>,
         one: (A) -> B,
         two: (B) -> C,
@@ -845,7 +845,7 @@ fun <A, B, C, R> doMI(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, R> doMI(
+fun <A, B, C, D, R> doMapIterator(
         zero: () -> Iterable<A>,
         one: (A) -> B,
         two: (B) -> C,
@@ -862,7 +862,7 @@ fun <A, B, C, D, R> doMI(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, R> doMI(
+fun <A, B, C, D, E, R> doMapIterator(
         zero: () -> Iterable<A>,
         one: (A) -> B,
         two: (B) -> C,
@@ -881,7 +881,7 @@ fun <A, B, C, D, E, R> doMI(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, R> doMI(
+fun <A, B, C, D, E, F, R> doMapIterator(
         zero: () -> Iterable<A>,
         one: (A) -> B,
         two: (B) -> C,
@@ -902,7 +902,7 @@ fun <A, B, C, D, E, F, R> doMI(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, G, R> doMI(
+fun <A, B, C, D, E, F, G, R> doMapIterator(
         zero: () -> Iterable<A>,
         one: (A) -> B,
         two: (B) -> C,
@@ -925,7 +925,7 @@ fun <A, B, C, D, E, F, G, R> doMI(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, G, H, R> doMI(
+fun <A, B, C, D, E, F, G, H, R> doMapIterator(
         zero: () -> Iterable<A>,
         one: (A) -> B,
         two: (B) -> C,
@@ -950,7 +950,7 @@ fun <A, B, C, D, E, F, G, H, R> doMI(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, G, H, I, R> doMI(
+fun <A, B, C, D, E, F, G, H, I, R> doMapIterator(
         zero: () -> Iterable<A>,
         one: (A) -> B,
         two: (B) -> C,

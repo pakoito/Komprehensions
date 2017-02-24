@@ -1,7 +1,7 @@
 package com.pacoworks.komprehensions
 
 /**
- * Defines a type limitation for [doCh] comprehensions
+ * Defines a type limitation for [doChainable] comprehensions
  */
 interface Chainable
 

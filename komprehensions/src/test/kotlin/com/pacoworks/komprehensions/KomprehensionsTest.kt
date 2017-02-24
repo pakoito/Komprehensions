@@ -25,95 +25,95 @@ class KomprehensionsTest {
 
     @Test
     fun oneL() {
-        Assert.assertEquals(doL(zero(1), one(true)), true)
+        Assert.assertEquals(doLet(zero(1), one(true)), true)
     }
 
     @Test
     fun twoL() {
-        Assert.assertEquals(doL(zero(2), one(true), two("result")), "result")
+        Assert.assertEquals(doLet(zero(2), one(true), two("result")), "result")
     }
 
     @Test
     fun threeL() {
-        Assert.assertEquals(doL(zero(3), one(true), two("result"), three("other")), "other")
+        Assert.assertEquals(doLet(zero(3), one(true), two("result"), three("other")), "other")
     }
 
     @Test
     fun fourL() {
-        Assert.assertEquals(doL(zero(4), one(true), two("result"), three("other"), four("other".length.toLong())), "other".length.toLong())
+        Assert.assertEquals(doLet(zero(4), one(true), two("result"), three("other"), four("other".length.toLong())), "other".length.toLong())
     }
 
     @Test
     fun fiveL() {
-        Assert.assertEquals(doL(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5)), false)
+        Assert.assertEquals(doLet(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5)), false)
     }
 
     @Test
     fun sixL() {
-        Assert.assertEquals(doL(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false))), "false")
+        Assert.assertEquals(doLet(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false))), "false")
     }
 
     @Test
     fun sevenL() {
-        Assert.assertEquals(doL(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true")), false)
+        Assert.assertEquals(doLet(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true")), false)
     }
 
     @Test
     fun eightL() {
-        Assert.assertEquals(doL(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true"), eight(Long::class.java)), Long::class.java)
+        Assert.assertEquals(doLet(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true"), eight(Long::class.java)), Long::class.java)
     }
 
     @Test
     fun nineL() {
-        val value = doL(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true"), eight(Long::class.java), nine())
+        val value = doLet(zero(1), one(true), two("result"), three("other"), four("other".length.toLong()), five("other".length < 5), six(java.lang.Boolean.toString(false)), seven("true"), eight(Long::class.java), nine())
         Assert.assertEquals(value, listOf(1, true, "result", "other", "other".length.toLong(), "other".length < 5, java.lang.Boolean.toString(false), false, Long::class.java))
     }
 
     @Test
     fun twoCh() {
-        val value = doCh({ One }, { Two })
+        val value = doChainable({ One }, { Two })
         Assert.assertEquals(Two, value)
     }
 
     @Test
     fun threeCh() {
-        val value = doCh({ One }, { Two }, { one, two -> Three })
+        val value = doChainable({ One }, { Two }, { one, two -> Three })
         Assert.assertEquals(Three, value)
     }
 
     @Test
     fun fourCh() {
-        val value = doCh({ One }, { Two }, { one, two -> Three }, { one, two, three -> Four })
+        val value = doChainable({ One }, { Two }, { one, two -> Three }, { one, two, three -> Four })
         Assert.assertEquals(Four, value)
     }
 
     @Test
     fun fiveCh() {
-        val value = doCh({ One }, { Two }, { one, two -> Three }, { one, two, three -> Four }, { one, two, three, four -> Five })
+        val value = doChainable({ One }, { Two }, { one, two -> Three }, { one, two, three -> Four }, { one, two, three, four -> Five })
         Assert.assertEquals(Five, value)
     }
 
     @Test
     fun sixCh() {
-        val value = doCh({ One }, { Two }, { one, two -> Three }, { one, two, three -> Four }, { one, two, three, four -> Five }, { one, two, three, four, five -> Six })
+        val value = doChainable({ One }, { Two }, { one, two -> Three }, { one, two, three -> Four }, { one, two, three, four -> Five }, { one, two, three, four, five -> Six })
         Assert.assertEquals(Six, value)
     }
 
     @Test
     fun sevenCh() {
-        val value = doCh({ One }, { Two }, { one, two -> Three }, { one, two, three -> Four }, { one, two, three, four -> Five }, { one, two, three, four, five -> Six }, { one, two, three, four, five, six -> Seven })
+        val value = doChainable({ One }, { Two }, { one, two -> Three }, { one, two, three -> Four }, { one, two, three, four -> Five }, { one, two, three, four, five -> Six }, { one, two, three, four, five, six -> Seven })
         Assert.assertEquals(Seven, value)
     }
 
     @Test
     fun eightCh() {
-        val value = doCh({ One }, { Two }, { one, two -> Three }, { one, two, three -> Four }, { one, two, three, four -> Five }, { one, two, three, four, five -> Six }, { one, two, three, four, five, six -> Seven }, { one, two, three, four, five, six, seven -> Eight })
+        val value = doChainable({ One }, { Two }, { one, two -> Three }, { one, two, three -> Four }, { one, two, three, four -> Five }, { one, two, three, four, five -> Six }, { one, two, three, four, five, six -> Seven }, { one, two, three, four, five, six, seven -> Eight })
         Assert.assertEquals(Eight, value)
     }
 
     @Test
     fun nineCh() {
-        val value = doCh({ One }, { Two }, { one, two -> Three }, { one, two, three -> Four }, { one, two, three, four -> Five }, { one, two, three, four, five -> Six }, { one, two, three, four, five, six -> Seven }, { one, two, three, four, five, six, seven -> Eight }, { one, two, three, four, five, six, seven, eight -> Nine })
+        val value = doChainable({ One }, { Two }, { one, two -> Three }, { one, two, three -> Four }, { one, two, three, four -> Five }, { one, two, three, four, five -> Six }, { one, two, three, four, five, six -> Seven }, { one, two, three, four, five, six, seven -> Eight }, { one, two, three, four, five, six, seven, eight -> Nine })
         Assert.assertEquals(Nine, value)
     }
 }
