@@ -26,22 +26,22 @@ fun calculateDoubles(calcParams: Params) =
 
 ### Let
 
-Komprehensions contains functions `doL()` for `let()`. Each takes from 2 to 9 function each with an increasing number of parameters, and returns an object of the type of the return of the last function.
+Komprehensions contains functions `doLet()` for `let()`. Each takes from 2 to 9 function each with an increasing number of parameters, and returns an object of the type of the return of the last function.
 
 ```java
 fun calculateDoubles(calcParams: Params) =
     // chained with let()
-    doL(
-        () -> params,
-        params -> defrombulate(params.first, param.second),
-        params, result -> gaussianRoots(result),
-        params, result, grtts -> storeResult(params.first, params.second, result, grtts)
+    doLet(
+        { calcParams },
+        { params -> defrombulate(params.first, param.second) },
+        { params, result -> gaussianRoots(result) },
+        { params, result, grtts -> storeResult(params.first, params.second, result, grtts) }
     )
 ```
 
 ### Chainable
 
-Komprehensions contains functions `doCh()` for interface `Chainable`. Each takes from 2 to 9 function each with an increasing number of parameters, and returns a Chainable.
+Komprehensions contains functions `doChainable()` for interface `Chainable`. Each takes from 2 to 9 function each with an increasing number of parameters, and returns a Chainable.
 
 It's functionally similar to let but it's limited to types that are marked as Chainable. The recommended usage is to annotate sealed classes with it to indicate that they can be transformed between them.
 An example is available in [this link](https://gist.github.com/pakoito/8043a42c2381112753cfdaab128cdc49) with a longer description given by ["A Domain Driven approach to Kotlin's new types"](http://www.pacoworks.com/2016/10/03/new-talk-a-domain-driven-approach-to-kotlins-new-types-at-mobilization-2016/).
@@ -62,29 +62,29 @@ Komprehensions-rx is an extension module that allows chaining of [RxJava](https:
 
 ### Map comprehensions
 
-Komprehensions-rx contains functions `doFM()` for `flatMap()`, `doCM()` for `concatMap()`, `doSM()` for `switchMap()`. Each takes from 1 to 9 function each with an increasing number of parameters, and returns an `Observable` of the type of the return of the last function.
+Komprehensions-rx contains functions `doFlatMap()` for `flatMap()`, `doConcatMap()` for `concatMap()`, `doSwitchMap()` for `switchMap()`. Each takes from 1 to 9 function each with an increasing number of parameters, and returns an `Observable` of the type of the return of the last function.
 
 ```java
 Observable<String> getUserFriends =
     // chained with flatMap()
-    RxComprehensions.doFM(
-        () -> profileClicks(),
-        position -> getUserFromProfile(position),
-        position, user -> requestFriendListForUser(position, user.id),
-        position, user, friends -> storeUserAndFriends(user, friends),
-        position, user, friends, result -> toUserDisplayString(position, user, friends, result)
+    RxComprehensions.doFlatMap(
+        { profileClicks() },
+        { position -> getUserFromProfile(position) },
+        { position, user -> requestFriendListForUser(position, user.id) },
+        { position, user, friends -> storeUserAndFriends(user, friends) },
+        { position, user, friends, result -> toUserDisplayString(position, user, friends, result) }
     );
 ```
 
 ### Compose comprehensions
 
-Komprehensions-rx contains functions `doCo()` for `compose()`. Each takes from 1 to 9 `Transformer<T, U>` (RxJava 1.X) or `ObservableTransformer<T, U>` (RxJava 2.X), and returns an `Observable` of the type of the return of the last one.
+Komprehensions-rx contains functions `doCompose()` for `compose()`. Each takes from 1 to 9 `Transformer<T, U>` (RxJava 1.X) or `ObservableTransformer<T, U>` (RxJava 2.X), and returns an `Observable` of the type of the return of the last one.
 
 ```java
 Observable<List<Siblings>> getRelatives =
     // chained with compose()
-    RxComprehensions.doCo(
-        () -> requestRelative("12345"),
+    RxComprehensions.doCompose(
+        { requestRelative("12345") },
         validate(),
         assureThreads(Schedulers.io(), AndroidSchedulers.main()),
         respectLifecycle(activity),
@@ -139,19 +139,19 @@ or to your `pom.xml`
 <dependency>
     <groupId>com.github.pakoito.Komprehensions</groupId>
     <artifactId>komprehensions</artifactId>
-    <version>1.2.1</version>
+    <version>1.3.0</version>
 </dependency>
 
 <dependency>
     <groupId>com.github.pakoito.Komprehensions</groupId>
     <artifactId>komprehensions-rx</artifactId>
-    <version>1.2.1</version>
+    <version>1.3.0</version>
 </dependency>
 
 <dependency>
     <groupId>com.github.pakoito.Komprehensions</groupId>
     <artifactId>komprehensions-rx2</artifactId>
-    <version>1.2.1</version>
+    <version>1.3.0</version>
 </dependency>
 ```
 
