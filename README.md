@@ -50,11 +50,11 @@ A special thanks to [@Takhion](https://github.com/Takhion) for simplifying my in
 
 ### map
 
-Komprehensions contains functions `doMI()` for `flatMap()` chaining of `Iterable`. Each takes from 1 to 9 function each with an increasing number of parameters, and returns an `Iterable` of the type of the return of the last function.
+Komprehensions contains functions `doMapITerable()` for `flatMap()` chaining of `Iterable`. Each takes from 1 to 9 function each with an increasing number of parameters, and returns an `Iterable` of the type of the return of the last function.
 
 ### flatMap
 
-Komprehensions contains functions `doFMI()` for `flatMap()` chaining of `Iterable`. Each takes from 1 to 9 function each with an increasing number of parameters and returns an `Iterable`, then flattens the return into an `Iterable` of the type of the return of the last function.
+Komprehensions contains functions `doFlatMapIterable()` for `flatMap()` chaining of `Iterable`. Each takes from 1 to 9 function each with an increasing number of parameters and returns an `Iterable`, then flattens the return into an `Iterable` of the type of the return of the last function.
 
 ## Komprehensions-rx
 
