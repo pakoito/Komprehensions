@@ -116,13 +116,13 @@ repositories {
     
 dependencies {
     ...
-    compile 'com.github.pakoito.Komprehensions:komprehensions:1.2.1'
+    compile 'com.github.pakoito.Komprehensions:komprehensions:1.3.0'
 
     // Extensions for RxJava 1.X
-    compile 'com.github.pakoito.Komprehensions:komprehensions-rx:1.2.1'
+    compile 'com.github.pakoito.Komprehensions:komprehensions-rx:1.3.0'
 
     // Extensions for RxJava 2.X
-    compile 'com.github.pakoito.Komprehensions:komprehensions-rx2:1.2.1'
+    compile 'com.github.pakoito.Komprehensions:komprehensions-rx2:1.3.0'
     ...
 }
 ```
