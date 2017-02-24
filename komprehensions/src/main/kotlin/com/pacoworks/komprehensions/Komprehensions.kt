@@ -545,7 +545,7 @@ fun <A: Chainable, B: Chainable, C: Chainable, D: Chainable, E: Chainable, F: Ch
  *
  * @return iterable
  */
-fun <A, R> doFlatMapIterator(
+fun <A, R> doFlatMapIterable(
         zero: () -> Iterable<A>,
         one: (A) -> Iterable<R>): Iterable<R> =
         zero.invoke()
@@ -558,7 +558,7 @@ fun <A, R> doFlatMapIterator(
  *
  * @return iterable
  */
-fun <A, B, R> doFlatMapIterator(
+fun <A, B, R> doFlatMapIterable(
         zero: () -> Iterable<A>,
         one: (A) -> Iterable<B>,
         two: (A, B) -> Iterable<R>): Iterable<R> =
@@ -575,7 +575,7 @@ fun <A, B, R> doFlatMapIterator(
  *
  * @return iterable
  */
-fun <A, B, C, R> doFlatMapIterator(
+fun <A, B, C, R> doFlatMapIterable(
         zero: () -> Iterable<A>,
         one: (A) -> Iterable<B>,
         two: (A, B) -> Iterable<C>,
@@ -596,7 +596,7 @@ fun <A, B, C, R> doFlatMapIterator(
  *
  * @return iterable
  */
-fun <A, B, C, D, R> doFlatMapIterator(
+fun <A, B, C, D, R> doFlatMapIterable(
         zero: () -> Iterable<A>,
         one: (A) -> Iterable<B>,
         two: (A, B) -> Iterable<C>,
@@ -621,7 +621,7 @@ fun <A, B, C, D, R> doFlatMapIterator(
  *
  * @return iterable
  */
-fun <A, B, C, D, E, R> doFlatMapIterator(
+fun <A, B, C, D, E, R> doFlatMapIterable(
         zero: () -> Iterable<A>,
         one: (A) -> Iterable<B>,
         two: (A, B) -> Iterable<C>,
@@ -650,7 +650,7 @@ fun <A, B, C, D, E, R> doFlatMapIterator(
  *
  * @return iterable
  */
-fun <A, B, C, D, E, F, R> doFlatMapIterator(
+fun <A, B, C, D, E, F, R> doFlatMapIterable(
         zero: () -> Iterable<A>,
         one: (A) -> Iterable<B>,
         two: (A, B) -> Iterable<C>,
@@ -683,7 +683,7 @@ fun <A, B, C, D, E, F, R> doFlatMapIterator(
  *
  * @return iterable
  */
-fun <A, B, C, D, E, F, G, R> doFlatMapIterator(
+fun <A, B, C, D, E, F, G, R> doFlatMapIterable(
         zero: () -> Iterable<A>,
         one: (A) -> Iterable<B>,
         two: (A, B) -> Iterable<C>,
@@ -720,7 +720,7 @@ fun <A, B, C, D, E, F, G, R> doFlatMapIterator(
  *
  * @return iterable
  */
-fun <A, B, C, D, E, F, G, H, R> doFlatMapIterator(
+fun <A, B, C, D, E, F, G, H, R> doFlatMapIterable(
         zero: () -> Iterable<A>,
         one: (A) -> Iterable<B>,
         two: (A, B) -> Iterable<C>,
@@ -761,7 +761,7 @@ fun <A, B, C, D, E, F, G, H, R> doFlatMapIterator(
  *
  * @return iterable
  */
-fun <A, B, C, D, E, F, G, H, I, R> doFlatMapIterator(
+fun <A, B, C, D, E, F, G, H, I, R> doFlatMapIterable(
         zero: () -> Iterable<A>,
         one: (A) -> Iterable<B>,
         two: (A, B) -> Iterable<C>,
@@ -806,7 +806,7 @@ fun <A, B, C, D, E, F, G, H, I, R> doFlatMapIterator(
  *
  * @return composed Observable
  */
-fun <A, R> doMapIterator(
+fun <A, R> doMapIterable(
         zero: () -> Iterable<A>,
         one: (A) -> R): Iterable<R> =
         zero()
@@ -817,7 +817,7 @@ fun <A, R> doMapIterator(
  *
  * @return composed Observable
  */
-fun <A, B, R> doMapIterator(
+fun <A, B, R> doMapIterable(
         zero: () -> Iterable<A>,
         one: (A) -> B,
         two: (B) -> R): Iterable<R> =
@@ -830,7 +830,7 @@ fun <A, B, R> doMapIterator(
  *
  * @return composed Observable
  */
-fun <A, B, C, R> doMapIterator(
+fun <A, B, C, R> doMapIterable(
         zero: () -> Iterable<A>,
         one: (A) -> B,
         two: (B) -> C,
@@ -845,7 +845,7 @@ fun <A, B, C, R> doMapIterator(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, R> doMapIterator(
+fun <A, B, C, D, R> doMapIterable(
         zero: () -> Iterable<A>,
         one: (A) -> B,
         two: (B) -> C,
@@ -862,7 +862,7 @@ fun <A, B, C, D, R> doMapIterator(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, R> doMapIterator(
+fun <A, B, C, D, E, R> doMapIterable(
         zero: () -> Iterable<A>,
         one: (A) -> B,
         two: (B) -> C,
@@ -881,7 +881,7 @@ fun <A, B, C, D, E, R> doMapIterator(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, R> doMapIterator(
+fun <A, B, C, D, E, F, R> doMapIterable(
         zero: () -> Iterable<A>,
         one: (A) -> B,
         two: (B) -> C,
@@ -902,7 +902,7 @@ fun <A, B, C, D, E, F, R> doMapIterator(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, G, R> doMapIterator(
+fun <A, B, C, D, E, F, G, R> doMapIterable(
         zero: () -> Iterable<A>,
         one: (A) -> B,
         two: (B) -> C,
@@ -925,7 +925,7 @@ fun <A, B, C, D, E, F, G, R> doMapIterator(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, G, H, R> doMapIterator(
+fun <A, B, C, D, E, F, G, H, R> doMapIterable(
         zero: () -> Iterable<A>,
         one: (A) -> B,
         two: (B) -> C,
@@ -950,7 +950,7 @@ fun <A, B, C, D, E, F, G, H, R> doMapIterator(
  *
  * @return composed Observable
  */
-fun <A, B, C, D, E, F, G, H, I, R> doMapIterator(
+fun <A, B, C, D, E, F, G, H, I, R> doMapIterable(
         zero: () -> Iterable<A>,
         one: (A) -> B,
         two: (B) -> C,
