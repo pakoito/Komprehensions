@@ -43,7 +43,7 @@ fun calculateDoubles(calcParams: Params) =
 
 Komprehensions contains functions `doChainable()` for interface `Chainable`. Each takes from 2 to 9 function each with an increasing number of parameters, and returns a Chainable.
 
-It's functionally similar to let but it's limited to types that are marked as Chainable. The recommended usage is to annotate sealed classes with it to indicate that they can be transformed between them.
+It's functionally similar to [let](https://github.com/pakoito/Komprehensions#let) but it's limited to types that are marked as Chainable. The recommended usage is to annotate sealed classes with it to indicate that they can be transformed between them.
 An example is available in [this link](https://gist.github.com/pakoito/8043a42c2381112753cfdaab128cdc49) with a longer description given by ["A Domain Driven approach to Kotlin's new types"](http://www.pacoworks.com/2016/10/03/new-talk-a-domain-driven-approach-to-kotlins-new-types-at-mobilization-2016/).
 
 A special thanks to [@Takhion](https://github.com/Takhion) for simplifying my initial implementation.
@@ -56,7 +56,7 @@ Komprehensions contains functions `doMI()` for `flatMap()` chaining of `Iterable
 
 Komprehensions contains functions `doFMI()` for `flatMap()` chaining of `Iterable`. Each takes from 1 to 9 function each with an increasing number of parameters and returns an `Iterable`, then flattens the return into an `Iterable` of the type of the return of the last function.
 
-### Komprehensions-rx
+## Komprehensions-rx
 
 Komprehensions-rx is an extension module that allows chaining of [RxJava](https://github.com/ReactiveX/RxJava) `Observables`. It is available for both RxJava 1 and 2
 
