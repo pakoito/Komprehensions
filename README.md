@@ -58,7 +58,7 @@ Komprehensions contains functions `doFlatMapIterable()` for `flatMap()` chaining
 
 ## Komprehensions-rx
 
-Komprehensions-rx is an extension module that allows chaining of [RxJava](https://github.com/ReactiveX/RxJava) `Observables`. It is available for both RxJava 1 and 2
+Komprehensions-rx is an extension module that allows chaining of [RxJava](https://github.com/ReactiveX/RxJava) `Observables`. It is available for both RxJava 1 and 2.
 
 ### Map comprehensions
 
