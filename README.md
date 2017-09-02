@@ -104,7 +104,7 @@ ObservableTransformer<RelativeDto, Relative> toUILayerModel() { /* ... */ }
 
 ObservableTransformer<Relative, List<Siblings>> groupSiblings() { /* ... */ }
 ```
-##Distribution
+## Distribution
 
 Add as a dependency to your `build.gradle`
 ```groovy
@@ -163,7 +163,7 @@ If you have any core function that is chainable, please PR against the main modu
 
 For any error report please send an issue with a full stack trace and reproduction steps.
 
-##License
+## License
 
 Copyright (c) pakoito 2016
 
