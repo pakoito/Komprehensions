@@ -1,6 +1,6 @@
 # Komprehensions
 
-RxComprehensions is a library to reduce boilerplate and simplify your call chains.
+Komprehensions is a library to reduce boilerplate and simplify your call chains.
 
 ## Rationale
 
