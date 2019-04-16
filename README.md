@@ -67,7 +67,7 @@ Komprehensions-rx contains functions `doFlatMap()` for `flatMap()`, `doConcatMap
 ```java
 Observable<String> getUserFriends =
     // chained with flatMap()
-    RxComprehensions.doFlatMap(
+    KomprehensionsRx.doFlatMap(
         { profileClicks() },
         { position -> getUserFromProfile(position) },
         { position, user -> requestFriendListForUser(position, user.id) },
@@ -83,7 +83,7 @@ Komprehensions-rx contains functions `doCompose()` for `compose()`. Each takes f
 ```java
 Observable<List<Siblings>> getRelatives =
     // chained with compose()
-    RxComprehensions.doCompose(
+    KomprehensionsRx.doCompose(
         { requestRelative("12345") },
         validate(),
         assureThreads(Schedulers.io(), AndroidSchedulers.main()),
@@ -116,7 +116,7 @@ Komprehensions-reactor contains functions `doFlatMap()` for `flatMap()`, `doConc
 ```java
 Flux<String> getUserFriends =
     // chained with flatMap()
-    RxComprehensions.doFlatMap(
+    KomprehensionsReactor.doFlatMap(
         { profileClicks() },
         { position -> getUserFromProfile(position) },
         { position, user -> requestFriendListForUser(position, user.id) },
