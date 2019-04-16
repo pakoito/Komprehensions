@@ -22,9 +22,9 @@ group = 'com.github.pakoito'
 
 dependencies {
     testCompile 'junit:junit:4.12'
+    testCompile 'io.projectreactor:reactor-test:3.2.8.RELEASE'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile "io.projectreactor:reactor-core:3.2.8.RELEASE"
-    testCompile("io.projectreactor:reactor-test:3.2.8.RELEASE")
 }
 
 install {
@@ -55,4 +55,22 @@ repositories {
 sourceSets {
     main.java.srcDirs += 'src/main/kotlin'
     test.java.srcDirs += 'src/test/kotlin'
+}
+
+/**
+ * Generate sources. Adapted from https://stackoverflow.com/a/28969412/5037824
+ */
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
 }

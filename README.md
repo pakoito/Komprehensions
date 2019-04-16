@@ -107,7 +107,7 @@ ObservableTransformer<Relative, List<Siblings>> groupSiblings() { /* ... */ }
 
 ## Komprehensions-reactor
 
-Komprehensions-reactor is an extension module that allows chaining of [Project Reactor](https://projectreactor.io/) `Flux`.
+Komprehensions-reactor is an extension module that allows chaining of [Project Reactor](https://projectreactor.io/) `Flux` and `Mono` operators.
 
 ### Map comprehensions
 
@@ -137,16 +137,16 @@ repositories {
     
 dependencies {
     ...
-    compile 'com.github.pakoito.Komprehensions:komprehensions:1.3.0'
+    compile 'com.github.pakoito.Komprehensions:komprehensions:1.3.1'
 
     // Extensions for RxJava 1.X
-    compile 'com.github.pakoito.Komprehensions:komprehensions-rx:1.3.0'
+    compile 'com.github.pakoito.Komprehensions:komprehensions-rx:1.3.1'
 
     // Extensions for RxJava 2.X
-    compile 'com.github.pakoito.Komprehensions:komprehensions-rx2:1.3.0'
+    compile 'com.github.pakoito.Komprehensions:komprehensions-rx2:1.3.1'
 
     // Extensions for Reactor
-    compile 'com.github.pakoito.Komprehensions:komprehensions-reactor:1.3.0'
+    compile 'com.github.pakoito.Komprehensions:komprehensions-reactor:1.3.1'
     ...
 }
 ```
@@ -163,25 +163,25 @@ or to your `pom.xml`
 <dependency>
     <groupId>com.github.pakoito.Komprehensions</groupId>
     <artifactId>komprehensions</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
 </dependency>
 
 <dependency>
     <groupId>com.github.pakoito.Komprehensions</groupId>
     <artifactId>komprehensions-rx</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
 </dependency>
 
 <dependency>
     <groupId>com.github.pakoito.Komprehensions</groupId>
     <artifactId>komprehensions-rx2</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
 </dependency>
 
 <dependency>
     <groupId>com.github.pakoito.Komprehensions</groupId>
     <artifactId>komprehensions-reactor</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
 </dependency>
 ```
 
