@@ -67,7 +67,7 @@ Komprehensions-rx contains functions `doFlatMap()` for `flatMap()`, `doConcatMap
 ```java
 Observable<String> getUserFriends =
     // chained with flatMap()
-    RxComprehensions.doFlatMap(
+    KomprehensionsRx.doFlatMap(
         { profileClicks() },
         { position -> getUserFromProfile(position) },
         { position, user -> requestFriendListForUser(position, user.id) },
@@ -83,7 +83,7 @@ Komprehensions-rx contains functions `doCompose()` for `compose()`. Each takes f
 ```java
 Observable<List<Siblings>> getRelatives =
     // chained with compose()
-    RxComprehensions.doCompose(
+    KomprehensionsRx.doCompose(
         { requestRelative("12345") },
         validate(),
         assureThreads(Schedulers.io(), AndroidSchedulers.main()),
@@ -104,6 +104,27 @@ ObservableTransformer<RelativeDto, Relative> toUILayerModel() { /* ... */ }
 
 ObservableTransformer<Relative, List<Siblings>> groupSiblings() { /* ... */ }
 ```
+
+## Komprehensions-reactor
+
+Komprehensions-reactor is an extension module that allows chaining of [Project Reactor](https://projectreactor.io/) `Flux` and `Mono` operators.
+
+### Map comprehensions
+
+Komprehensions-reactor contains functions `doFlatMap()` for `flatMap()`, `doConcatMap()` for `concatMap()`, `doSwitchMap()` for `switchMap()`. Each takes from 1 to 9 function each with an increasing number of parameters, and returns an `Flux` of the type of the return of the last function. It also contains functions `doFlatMapMono()` for `flatMap()` on the `Mono` operator. Each takes from 1 to 8 function each with an increasing number of parameters, and returns a `Mono` of the type of the return of the last function.
+
+```java
+Flux<String> getUserFriends =
+    // chained with flatMap()
+    KomprehensionsReactor.doFlatMap(
+        { profileClicks() },
+        { position -> getUserFromProfile(position) },
+        { position, user -> requestFriendListForUser(position, user.id) },
+        { position, user, friends -> storeUserAndFriends(user, friends) },
+        { position, user, friends, result -> toUserDisplayString(position, user, friends, result) }
+    );
+```
+
 ## Distribution
 
 Add as a dependency to your `build.gradle`
@@ -123,6 +144,9 @@ dependencies {
 
     // Extensions for RxJava 2.X
     compile 'com.github.pakoito.Komprehensions:komprehensions-rx2:1.3.1'
+
+    // Extensions for Reactor
+    compile 'com.github.pakoito.Komprehensions:komprehensions-reactor:1.3.1'
     ...
 }
 ```
@@ -151,6 +175,12 @@ or to your `pom.xml`
 <dependency>
     <groupId>com.github.pakoito.Komprehensions</groupId>
     <artifactId>komprehensions-rx2</artifactId>
+    <version>1.3.1</version>
+</dependency>
+
+<dependency>
+    <groupId>com.github.pakoito.Komprehensions</groupId>
+    <artifactId>komprehensions-reactor</artifactId>
     <version>1.3.1</version>
 </dependency>
 ```
