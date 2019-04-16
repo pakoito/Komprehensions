@@ -813,7 +813,7 @@ fun <A, B, C, D, E, F, G, H, I, R> doSwitchMap(
  *
  * @return composed Mono
  */
-fun <A, R> doFlatMap(
+fun <A, R> doFlatMapMono(
         zero: () -> Mono<A>,
         one: (A) -> Mono<R>): Mono<R> =
         zero.invoke()
@@ -826,7 +826,7 @@ fun <A, R> doFlatMap(
  *
  * @return composed Mono
  */
-fun <A, B, R> doFlatMap(
+fun <A, B, R> doFlatMapMono(
         zero: () -> Mono<A>,
         one: (A) -> Mono<B>,
         two: (A, B) -> Mono<R>): Mono<R> =
@@ -843,7 +843,7 @@ fun <A, B, R> doFlatMap(
  *
  * @return composed Mono
  */
-fun <A, B, C, R> doFlatMap(
+fun <A, B, C, R> doFlatMapMono(
         zero: () -> Mono<A>,
         one: (A) -> Mono<B>,
         two: (A, B) -> Mono<C>,
@@ -864,7 +864,7 @@ fun <A, B, C, R> doFlatMap(
  *
  * @return composed Mono
  */
-fun <A, B, C, D, R> doFlatMap(
+fun <A, B, C, D, R> doFlatMapMono(
         zero: () -> Mono<A>,
         one: (A) -> Mono<B>,
         two: (A, B) -> Mono<C>,
@@ -889,7 +889,7 @@ fun <A, B, C, D, R> doFlatMap(
  *
  * @return composed Mono
  */
-fun <A, B, C, D, E, R> doFlatMap(
+fun <A, B, C, D, E, R> doFlatMapMono(
         zero: () -> Mono<A>,
         one: (A) -> Mono<B>,
         two: (A, B) -> Mono<C>,
@@ -918,7 +918,7 @@ fun <A, B, C, D, E, R> doFlatMap(
  *
  * @return composed Mono
  */
-fun <A, B, C, D, E, F, R> doFlatMap(
+fun <A, B, C, D, E, F, R> doFlatMapMono(
         zero: () -> Mono<A>,
         one: (A) -> Mono<B>,
         two: (A, B) -> Mono<C>,
@@ -951,7 +951,7 @@ fun <A, B, C, D, E, F, R> doFlatMap(
  *
  * @return composed Mono
  */
-fun <A, B, C, D, E, F, G, R> doFlatMap(
+fun <A, B, C, D, E, F, G, R> doFlatMapMono(
         zero: () -> Mono<A>,
         one: (A) -> Mono<B>,
         two: (A, B) -> Mono<C>,
@@ -988,7 +988,7 @@ fun <A, B, C, D, E, F, G, R> doFlatMap(
  *
  * @return composed Mono
  */
-fun <A, B, C, D, E, F, G, H, R> doFlatMap(
+fun <A, B, C, D, E, F, G, H, R> doFlatMapMono(
         zero: () -> Mono<A>,
         one: (A) -> Mono<B>,
         two: (A, B) -> Mono<C>,
@@ -1029,7 +1029,7 @@ fun <A, B, C, D, E, F, G, H, R> doFlatMap(
  *
  * @return composed Mono
  */
-fun <A, B, C, D, E, F, G, H, I, R> doFlatMap(
+fun <A, B, C, D, E, F, G, H, I, R> doFlatMapMono(
         zero: () -> Mono<A>,
         one: (A) -> Mono<B>,
         two: (A, B) -> Mono<C>,

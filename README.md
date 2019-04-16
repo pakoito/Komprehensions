@@ -111,7 +111,7 @@ Komprehensions-reactor is an extension module that allows chaining of [Project R
 
 ### Map comprehensions
 
-Komprehensions-reactor contains functions `doFlatMap()` for `flatMap()`, `doConcatMap()` for `concatMap()`, `doSwitchMap()` for `switchMap()`. Each takes from 1 to 9 function each with an increasing number of parameters, and returns an `Flux` of the type of the return of the last function. It also contains functions `doFlatMap()` for `flatMap()` for the `Mono` operator. Each takes from 1 to 8 function each with an increasing number of parameters, and returns a `Mono` of the type of the return of the last function.
+Komprehensions-reactor contains functions `doFlatMap()` for `flatMap()`, `doConcatMap()` for `concatMap()`, `doSwitchMap()` for `switchMap()`. Each takes from 1 to 9 function each with an increasing number of parameters, and returns an `Flux` of the type of the return of the last function. It also contains functions `doFlatMapMono()` for `flatMap()` on the `Mono` operator. Each takes from 1 to 8 function each with an increasing number of parameters, and returns a `Mono` of the type of the return of the last function.
 
 ```java
 Flux<String> getUserFriends =

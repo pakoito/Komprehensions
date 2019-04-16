@@ -168,56 +168,56 @@ class KomprehensionsReactorKtTest {
 
     @Test
     fun oneMonoFM() {
-        doFlatMap(zeroMono(1), oneMono(true)).test()
+        doFlatMapMono(zeroMono(1), oneMono(true)).test()
                 .expectNext(true)
                 .verifyComplete()
     }
 
     @Test
     fun twoMonoFM() {
-        doFlatMap(zeroMono(2), oneMono(true), twoMono("result")).test()
+        doFlatMapMono(zeroMono(2), oneMono(true), twoMono("result")).test()
                 .expectNext("result")
                 .verifyComplete()
     }
 
     @Test
     fun threeMonoFM() {
-        doFlatMap(zeroMono(3), oneMono(true), twoMono("result"), threeMono("other")).test()
+        doFlatMapMono(zeroMono(3), oneMono(true), twoMono("result"), threeMono("other")).test()
                 .expectNext("other")
                 .verifyComplete()
     }
 
     @Test
     fun fourMonoFM() {
-        doFlatMap(zeroMono(4), oneMono(true), twoMono("result"), threeMono("other"), fourMono("other".length.toLong())).test()
+        doFlatMapMono(zeroMono(4), oneMono(true), twoMono("result"), threeMono("other"), fourMono("other".length.toLong())).test()
                 .expectNext("other".length.toLong())
                 .verifyComplete()
     }
 
     @Test
     fun fiveMonoFM() {
-        doFlatMap(zeroMono(1), oneMono(true), twoMono("result"), threeMono("other"), fourMono("other".length.toLong()), fiveMono("other".length < 5)).test()
+        doFlatMapMono(zeroMono(1), oneMono(true), twoMono("result"), threeMono("other"), fourMono("other".length.toLong()), fiveMono("other".length < 5)).test()
                 .expectNext(false)
                 .verifyComplete()
     }
 
     @Test
     fun sixMonoFM() {
-        doFlatMap(zeroMono(1), oneMono(true), twoMono("result"), threeMono("other"), fourMono("other".length.toLong()), fiveMono("other".length < 5), sixMono(java.lang.Boolean.toString(false))).test()
+        doFlatMapMono(zeroMono(1), oneMono(true), twoMono("result"), threeMono("other"), fourMono("other".length.toLong()), fiveMono("other".length < 5), sixMono(java.lang.Boolean.toString(false))).test()
                 .expectNext("false")
                 .verifyComplete()
     }
 
     @Test
     fun sevenMonoFM() {
-        doFlatMap(zeroMono(1), oneMono(true), twoMono("result"), threeMono("other"), fourMono("other".length.toLong()), fiveMono("other".length < 5), sixMono(java.lang.Boolean.toString(false)), sevenMono("true")).test()
+        doFlatMapMono(zeroMono(1), oneMono(true), twoMono("result"), threeMono("other"), fourMono("other".length.toLong()), fiveMono("other".length < 5), sixMono(java.lang.Boolean.toString(false)), sevenMono("true")).test()
                 .expectNext(false)
                 .verifyComplete()
     }
 
     @Test
     fun eightMonoFM() {
-        doFlatMap(zeroMono(1), oneMono(true), twoMono("result"), threeMono("other"), fourMono("other".length.toLong()), fiveMono("other".length < 5), sixMono(java.lang.Boolean.toString(false)), sevenMono("true"), eightMono(Long::class.java)).test()
+        doFlatMapMono(zeroMono(1), oneMono(true), twoMono("result"), threeMono("other"), fourMono("other".length.toLong()), fiveMono("other".length < 5), sixMono(java.lang.Boolean.toString(false)), sevenMono("true"), eightMono(Long::class.java)).test()
                 .expectNext(Long::class.java)
                 .verifyComplete()
     }
